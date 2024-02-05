@@ -7,6 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\sist0103\work\JdbcProject"/>
+			<item value="C:\sist0103\work\SistJavaProject"/>
 			<item value="C:\Users\user\Desktop\byungjun"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
