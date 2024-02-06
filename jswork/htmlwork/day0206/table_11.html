@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border: 2px solid gray;
+            border-collapse: collapse; /* 표의 줄 사이의 여백이 없어짐(2줄->1줄로) */
+        }
+        tr,th,td{
+            border: 1px dotted green;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <!-- thead: 제목, 코드에 전혀 영향을 미치지 않는 것(시멘틱태그) -->
+        <thead>
+            <tr><!-- 하나의 행을 의미 -->
+                <th>이름</th><!-- th: 제목, 가운데 정렬 -->
+                <th>학과</th><!-- 하나의 행에 들어가는 하나의 열 -->
+                <th>학년</th>
+                <th>주소</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>강동원</td>
+                <td>컴공과</td>
+                <td>2</td>
+                <td>서울시 서초구</td>
+            </tr>
+            <tr>
+                <td>이승기</td>
+                <td>영어영문학과</td>
+                <td>3</td>
+                <td>서울시 강동구 갈동</td>
+            </tr>
+            <tr>
+                <td>윤미래</td>
+                <td>유아교육과</td>
+                <td>4</td>
+                <td>인천시 서구</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
