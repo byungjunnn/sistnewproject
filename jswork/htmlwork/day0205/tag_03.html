@@ -6,7 +6,9 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- marquee: 움직이게 하는 태그 -->
     <marquee>우리는 HTML공부중입니다</marquee><br>
+    <!-- direction: 움직이는 방향, width: 움직이는 곳의 너비-->
     <marquee direction="right" width="500" bgcolor="#ffccff">오늘은 비오는 월요일입니다</marquee>
     <hr>
     <marquee direction="right">
@@ -18,13 +20,20 @@
     </marquee>
     <hr>
     <b>자주 사용하는 특수기호</b><br>
+    <!-- &nbsp: Non-breaking Space, 줄바꿈을 일으키지 않는 공백 -->
+    <!-- &copy: © 특수기호 넣기 -->
     A &nbsp;&nbsp; B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C<br>
     &copy;서울대학교<br>
+
     <지금 시각은 2시13분><br>
+    <!-- &ltl: <, &gt: > -->
     &lt;지금 시각은 2시 13분&gt;
     <hr>
-    <!-- target은 다른창에 열리나 계속 생기지 않음 
-         blank는 다른창에 열리고 계속해서 새창 열림-->
+    <!-- a: anchor, 웹페이지에서 특정 위치로 이동 혹은 하이퍼링크 생성
+         href: 이동할 URL 지정
+         target: 새 창이나 현재 창에서 링크를 열지 여부 결정
+         new: 새 창에서 열리나 계속해서 현재 창에 열림
+         blank: 새 창에 열리고 계속해서 새 창이 열림-->
     <a href="./hellotest.html" target="_new">1번예제</a><br>
     <a href="./tagTest_02.html" target="_blank">2번예제</a><br>
 </body>

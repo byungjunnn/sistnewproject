@@ -35,7 +35,7 @@
             font-size: 15px;
             margin-left: 20px;
         }
-        h3.c{
+        hr.c{
             clear: both; /*float이 계속 되지않도록 속성 해제, float 사용시 반드시 필요*/
         }
         div.d{
@@ -46,7 +46,7 @@
         }
         div.d{
             display: flex; /*가로 방향 왼쪽정렬*/
-            flex-direction: row-reverse; /*가로 방향 반대로 정렬*/
+            flex-direction: row-reverse; /*가로 방향 반대(오른쪽)로 정렬*/
             border: 1px solid gray;
         }
     </style>
@@ -61,12 +61,15 @@
     <br>
 
     <div class="b">
+        <!-- figure: 삽화나 다이어그램, 사진 등과 같이
+                     문서의 주요 흐름과는 독립적인 콘텐츠 정의 -->
         <figure>
             <img src="../image/logoImg/bag01.png" width="150">
             <figcaption><b>블랙토트백</b></figcaption>
         </figure>
         <figure>
             <img src="../image/logoImg/bag02.png" width="150">
+            <!-- figcaption: figure요소의 콘텐츠를 참조할 수 있는 설명이나 범례를 나타냄 -->
             <figcaption><b>그레이토트백</b></figcaption>
         </figure>
         <figure>
