@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("안녕 재석이가 자바스크립트 수업을 듣는 중입니다<br>");
+        document.write("안녕 형돈이가 자바스크립트 수업을 듣는 중입니다<br>");
+        document.write("안녕 홍철이가 자바스크립트 수업을 듣는 중입니다<br><br>");
+        
+
+        //중복되는 부분을 함수로 포장
+        //중복되지 않는 부분은 파라메타로 만든 후 함수 호출시 값을 넘긴다
+        function showname(name){
+            document.write("안녕 "+name+"이가 자바스크립트 수업을 듣는 중입니다<br>");
+        }
+
+        showname("재석");
+        showname("형돈");
+        showname("홍철");
+    </script>
+    <br>
+    <script>
+        //안녕하세요 영식님의 나이는 22세 입니다
+        //안녕하세요 영철님의 나이는 26세 입니다
+        //안녕하세요 영호님의 나이는 28세 입니다
+        
+        function nameage(name, age){
+            document.write("안녕하세요 "+name+"님의 나이는 "+age+"세 입니다<br>");
+        }
+        
+        nameage("영식", 22);
+        nameage("영철", 26);
+        nameage("영호", 28);
+    </script>
+</body>
+</html>
