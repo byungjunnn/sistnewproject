@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- let은 영역변수이므로 영역별로 값이 다름 -->
+    <script>
+        var a=1;
+        let b=2;
+
+        function myFunction(){
+            var a=3;
+            let b=4;
+
+            if(true){
+                var a=5;
+                let b=6;
+
+                console.log(a); //5
+                console.log(b); //6
+            }
+            console.log(a); //5
+            console.log(b); //4
+        }
+        myFunction();
+        console.log(a); //1
+        console.log(b); //2
+    </script>
+
+    <script>
+        // 전역변수 vs 지역변수
+        var m=10;
+        var n=100; // 전역변수
+
+        function outer(){
+            var m=20; // 지역변수 : 지역 내에서만 사용하는 변수
+
+            document.write("3. m="+m+"<br>"); //20
+            document.write("4. n="+n+"<br>"); //100
+        }
+
+        document.write("1. m="+m+"<br>") //10
+        document.write("2. n="+n+"<br>") //100
+
+        outer();
+    </script>
+</body>
+</html>
