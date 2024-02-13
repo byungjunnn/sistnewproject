@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{width: 150px;}
+    </style>
+    <script>
+        function test(){
+            alert("경고창은\n<br>태그가 안먹힙니다");
+        }
+
+        function test2(){
+            var str="<font color='red' size='5'>html요소에 출력합니다</font>";
+            out.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="여기를 누르세요" onclick="test()"> <!-- test: 사용자 함수 -->
+    <br>
+    <div id="out"></div>
+    <input type="button" value="html 요소에 출력하기" onclick="test2()">
+    <br>
+    <hr>
+    <img src="../image/Food/5.jpg" onmouseover="this.src='../image/Food/6.jpg'"
+    onmouseout="src='../image/Food/5.jpg'">
+</body>
+</html>

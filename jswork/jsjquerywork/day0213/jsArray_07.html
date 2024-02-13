@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            border-radius: 10px;
+            border: 3px solid pink;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var h="<h2>Hello</h2>";
+        document.write(h);
+
+        for(var i=1;i<=10;i++){
+            document.write("<b>"+i+"</b>&nbsp&nbsp")
+        }
+
+        document.write("<br><br>");
+
+        //Food폴더의 1~10까지를 출력
+
+        for(var i=1;i<=10;i++){
+            document.write("<img src='../image/Food/"+i+".jpg' width='100'>");
+        }
+        
+        document.write("================================<br>");
+        //logoImg 폴더에 toy01~06까지 출력
+        for(var i=1;i<=6;i++){
+            document.write("<img src='../image/logoImg/toy0"+i+".png' width='100'>");
+        }
+
+        document.write("================================<br>");
+        //사진의 일련변호가 없을 때, 이미지를 배열에 담아서 출력
+        var imgArr=["a01","bag01","captain","icon03","acc02","bag01","blackwidow"];
+        for(var i=0;i<imgArr.length;i++){
+            document.write("<img src='../image/logoImg/"+imgArr[i]+".png' width='100'>");
+        }
+
+        document.write("================================<br>");
+        //Q. 만화이미지의 01.png ~20까지를 출력(가능하면 4행5열로 출력)
+        for(var i=1;i<=20;i++){
+            var imgname="../image/만화이미지/"+(i<10?"0":"")+i+".png";
+            var s="<img src='"+imgname+"'>";
+            document.write(s);
+
+            if(i%5==0)
+                document.write("<br><br>");
+        }
+
+        // if(i<10){
+        //     for(var i=1;i<=5;i++){
+        //         document.write("<img src='../image/만화이미지/0"+i+".png' width='100'>");
+        // }
+        // }
+        // document.write("<br><br>");
+        // for(var i=6;i<=9;i++){
+        //     document.write("<img src='../image/만화이미지/0"+i+".png' width='100'>");
+        // }document.write("<img src='../image/만화이미지/10.png' width='100'>");
+
+        // document.write("<br><br>");
+        // for(var i=11;i<=15;i++){
+        //     document.write("<img src='../image/만화이미지/"+i+".png' width='100'>");
+        // }
+
+        // document.write("<br><br>");
+        // for(var i=16;i<=19;i++){
+        //     document.write("<img src='../image/만화이미지/"+i+".png' width='100'>");
+        // }document.write("<img src='../image/만화이미지/20.png' width='100'>");
+    </script>
+</body>
+</html>
