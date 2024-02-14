@@ -87,12 +87,14 @@
         for(var i=0;i<foods.length;i++){
             document.write("<h3>"+foods[i]+"</h3>");
         }
+
         document.write("================================<br>");
 
         foods.pop(); //pop: 배열에서 마지막 배열값 삭제(foods[2] 삭제)
         for(var i=0;i<foods.length;i++){
             document.write("<h3>"+foods[i]+"</h3>");
         }
+
         document.write("================================<br>");
         foods.shift(); //shift: 배열에서 첫번째 요소 제거(foods[0] 삭제)
         for(var i=0;i<foods.length;i++){
@@ -100,7 +102,7 @@
         }
 
         document.write("================================<br>");
-        foods.unshift('햄버거'); //shift: 배열에서 첫번째 요소 추가(foods[0] 추가)
+        foods.unshift('햄버거'); //unshift: 배열에서 첫번째 요소 추가(foods[0] 추가)
         for(var i=0;i<foods.length;i++){
             document.write("<h3>"+foods[i]+"</h3>");
         }

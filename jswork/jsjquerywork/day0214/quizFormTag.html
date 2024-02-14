@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@100..900&
+    family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+            border: 3px solid gray;
+        }
+
+        th,td{
+            border: 1px solid gray;
+        }
+
+        #result{
+            font-family: Noto Sans KR;
+            width: 500px;
+            height: 200px;
+            border: 2px solid gray;
+            margin-top: 20px;
+            padding: 20px 20px;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            document.getElementById("btnResult").onclick=function(){
+                var s="";
+                s="이름: "+document.getElementById("name").value+"<br>";
+
+                s+="혈액형: "+frm.blood.value+"형 <br>";
+                
+                var langStr="가능언어: ";
+                var flag=false;
+                for(var i=0;i<frm.lang.length;i++){
+                    if(frm.lang[i].checked){
+                        flag=true;
+                        langStr+=frm.lang[i].value+", ";
+                    }
+                }
+                if(!flag){
+                    langStr+="없음<br>"
+                }else{
+                    langStr=langStr.slice(0,-2);
+                }
+                s+=langStr+"<br>";
+                // result.innerHTML+="가능언어: "+langStr+"<br>";;
+                
+                s+="입사일자: "+document.getElementById("ipsa").value+"<br>";
+               
+                result.innerHTML=s;
+                
+                }
+
+        }
+    </script>
+</head>
+<body>
+    <form name="frm">
+        <table>
+            <caption><b>폼태그 출력 과제_개인정보</b></caption>
+            <tr>
+                <th>이름</th>
+                <td>
+                    <input type="text" id="name" size="10" placeholder="이름">
+                </td>
+            </tr>
+
+            <tr>
+                <th>비밀번호</th>
+                <td>
+                    <input type="password" id="pw" size="12" placeholder="비밀번호">
+                </td>
+            </tr>
+
+            <tr>
+                <th>혈액형</th>
+                <td>
+                    <input type="radio" name="blood" value="A">A형
+                    <input type="radio" name="blood" value="B">B형
+                    <input type="radio" name="blood" value="O">O형
+                    <input type="radio" name="blood" value="AB">AB형
+                </td>
+            </tr>
+
+            <tr>
+                <th>가능언어</th>
+                <td>
+                    <input type="checkbox" name="lang" value="C++">C++
+                    <input type="checkbox" name="lang" value="Java">Java
+                    <input type="checkbox" name="lang" value="Jquery">Jquery
+                    <input type="checkbox" name="lang" value="Spring">Spring
+                </td>
+            </tr>
+
+            <tr>
+                <th>입사일자</th>
+                <td>
+                    <input type="date" value="2022-01-01" id="ipsa">
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="button" id="btnResult" value="결과출력">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="result">결과출력하는곳</div>
+</body>
+</html>

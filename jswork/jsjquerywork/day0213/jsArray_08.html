@@ -75,9 +75,13 @@
         imgArr3.push('../image/만화이미지/05.png');
         imgArr3.push('../image/만화이미지/06.png');
 
+        var s="배열갯수: "+imgArr3.length+"<br>";
+        
         for(var i=0;i<imgArr3.length;i++){
-            document.write("<img src='"+imgArr3[i]+"'>");
+            s+="<img src='"+imgArr3[i]+"'>"
+            // document.write("<img src='"+imgArr3[i]+"'>");
         }
+        document.write(s);
    
         document.write("<hr>");
         // <h3>위의 예제에서 마지막 이미지 2개 지우고 다시 출력</h3>
