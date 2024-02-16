@@ -39,7 +39,7 @@
         window.onload = function () {
             btn.onclick = function () {
                 var ans = prompt("인덱스 번호를 입력해주세요");
-                if (ans < 0 || ans >= imgArr.length || ans == null || ans!=Number() || ans=="") {
+                if (ans < 0 || ans >= imgArr.length || ans == null || ans!=Number(ans) || ans=="") {
                     alert("해당번호의 이미지는 없습니다");
                 } else {
                     result.innerHTML = "<img src='" + imgArr[ans] + "' class='img-thumbnail'>";

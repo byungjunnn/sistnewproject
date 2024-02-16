@@ -16,7 +16,7 @@
             font-size: 40px;
             margin-top: 20px;
             border: 2px solid gray;
-            background: url(../image/연예인사진/10.jpg) no-repeat right bottom;
+            background: url(../image/만화이미지/01.png) no-repeat right bottom;
             background-size: 50px 60px;
         }
 
@@ -44,7 +44,7 @@
                 if(img==null){
                     alert("사진을 바꾸지 않겠어요");
                     return;
-                }else if(img<=0 || img>=21){
+                }else if(img<=0 || img>=21 || img!=Number(img)){
                     alert("1~20까지만 사진이 존재");
                     return;
                 }else{
@@ -57,7 +57,7 @@
             
             document.getElementById("btn3").onclick=function(){
                 var i=prompt("이미지의 너비를 입력");
-                if(i==null){
+                if(i==null || i==""){
                     alert("이미지 너비 변경 안 해");
                 }else{
                     imgceleb.setAttribute("width",i);

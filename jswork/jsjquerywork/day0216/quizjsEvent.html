@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .iyou{
+            border: 3px solid gray;
+            width: 250px;
+            height: 200px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 125px;
+        }
+    </style>
+</head>
+<body>
+    <h3>1.연예인 1.jpg~20까지 for 반복문 이용해서 body에 출력</h3>
+
+    <h3>2.Food사진 1을 img태그로 나타낸 후 id를 img1으로 주고 그 아이디로 이벤트 추가
+        사진에 마우스 올리면 10으로 바뀌고, 클릭하면 11로 바뀜.
+        마우스 벗어나면 원래 사진으로 변경
+    </h3>
+
+    <h3>버튼 하나 만들고 클릭시 prompt로 이름을 입력 받아 div태그 안에
+        '내 이름은 홍길동 입니다'라고 출력(div에 class="iyou" 라고 준 후 css 스타일로 적용)
+    </h3>
+
+    <script>
+        for(var i=1;i<=20;i++){
+            document.write("<img src='../image/연예인사진/"+i+".jpg' width='50px'>");
+        }
+    </script>
+
+    <hr>
+
+    <img src="../image/Food/1.jpg" id="img1" width="200">
+    <script>
+        var food=document.getElementById("img1");
+        food.onmouseover=function(){
+            this.setAttribute("src", "../image/Food/10.jpg");
+        }
+        food.onclick=function(){
+            this.setAttribute("src", "../image/Food/11.jpg");
+        }
+        food.onmouseout=function(){
+            this.setAttribute("src", "../image/Food/1.jpg")
+        }
+    </script>
+
+    <hr>
+    
+    <button type="button" id="btn" class="btn btn-outline-success" style="margin-left: 100px;">버튼</button>
+    <div id=iyou class="iyou">출력창</div>
+    <script>
+        document.getElementById("btn").onclick=function(){
+            var name=prompt("이름 입력");
+
+            iyou.innerHTML="내 이름은 "+name+" 입니다";
+        }
+    </script>
+</body>
+</html>
