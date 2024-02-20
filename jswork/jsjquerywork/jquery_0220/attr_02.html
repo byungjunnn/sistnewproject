@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <title>Document</title>
+    <script>
+        $(function(){
+            //1.h3>b 태그 글자색을 green, 배경색 #ffddff
+            $("h3>b").css("color","green").css("background-color", "#ffddff");
+            //2.모든 h3 너비400, 보더 2px inset orange, margin bottom 10px
+            $("h3").css({"width":"400px", "border":"2px inset orange","margin-bottom":"10px"})
+            //3.모든 span 글꼴을 변경, 글자색 purple
+            $("span").css("font-family","Hahmlet").css("color","purple")
+            //4.모든 b태그를 클릭하면 글자을 가져와서 h2태그에 넣기
+            //그리고 이미지에 해당이미지 나타나게
+            $("b").click(function(){
+                var g=$(this).text();
+                var i=$(this).next().next().text();
+                $("h2").text(g)
+                $("img.photo").attr("src",i);
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <h3>
+        <b>에그볶음밥</b>
+        <br>
+        <span>../image/Food/6.jpg</span>
+    </h3>
+    <hr>
+    <h3>
+        <b>망고빙수</b>
+        <br>
+        <span>../image/Food/11.jpg</span>
+    </h3>
+    <hr>
+    <h3>
+        <b>순두부찌개</b>
+        <br>
+        <span>../image/Food/12.jpg</span>
+    </h3>
+    <hr>
+
+    <img src="" class="photo">
+    <h2></h2>
+</body>
+</html>
