@@ -13,21 +13,21 @@
 	<form action="quizWrite.jsp" method="post">
 		<table class="table table-bordered" style="width:600px">
 			<tr>
-				<th class="table table-info" width="120" style="text-align: center">사원명</th>
+				<th class="table-info" width="120" style="text-align: center">사원명</th>
 				<td>
 					<input type="text" name="name">
 				</td>
 			</tr>
 			
 			<tr>
-				<th class="table table-info" width="120" style="text-align: center">입사일자</th>
+				<th class="table-info" width="120" style="text-align: center">입사일자</th>
 				<td>
 					<input type="date" name="date">
 				</td>
 			</tr>
 			
 			<tr>
-				<th class="table table-info" width="120" style="text-align: center">점심메뉴</th>
+				<th class="table-info" width="120" style="text-align: center">점심메뉴</th>
 				<td>
 					<input type="radio" value="../image/Food/1.jpg" name="food"><img src="../image/Food/1.jpg" width="80">
 					<input type="radio" value="../image/Food/2.jpg" name="food"><img src="../image/Food/2.jpg" width="80">
@@ -36,7 +36,7 @@
 			</tr>
 			
 			<tr>
-				<th class="table table-info" width="120" style="text-align: center">건의 메뉴</th>
+				<th class="table-info" width="120" style="text-align: center">건의 메뉴</th>
 				<td>
 					<select name="menu" class="form-control" style="width:200px" multiple="multiple">
 						<option value="쌀국수">쌀국수</option>

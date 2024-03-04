@@ -15,7 +15,7 @@
 		//get 방식은 한글 깨짐 없음
 		String name=request.getParameter("name");
 		String pass=request.getParameter("pass");
-		String license=request.getParameter("cdlic");
+		String license=request.getParameter("cblic");
 	%>
 	
 	<h3 class="alert alert-danger">결과값 출력</h3>

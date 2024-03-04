@@ -11,9 +11,9 @@
 </head>
 <body>
 	
-	<!-- jsp:include:다른파일의 결과페이지를 현재파일에 포함
-	jsp:forward :다른 파일로 이동 (url주소 안바뀜) request,, response 등이 그대로 전달
-	jsp: */redirect : url주소바뀜 request,, response 등이 새로 생성-->
+	<!-- jsp: include:다른파일의 결과페이지를 현재파일에 포함
+			  jsp: forward :다른 파일로 이동 (url주소 안바뀜) request, response 등이 그대로 전달
+			  jsp: redirect : url주소바뀜 request, response 등이 새로 생성-->
 	
 	<h2>다른 폴더의 파일 include하기</h2>
 	
