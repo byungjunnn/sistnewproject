@@ -17,7 +17,7 @@
 <script type="text/javascript">
 	$(function() {
 		
-		$("#btnteam").click(function() {
+		$("#btnteam").click(function () {
 			
 			$.ajax({
 				type:"get",
@@ -57,8 +57,8 @@
 						s+="번호: "+m.attr("num")+"<br>";
 						s+="음식이름: "+m.find("foodname").text()+"<br>";
 						s+="음식사진: <img src='"+m.find("foodphoto").text()+"' width='100'><br>";
-						s+="가격: "+m.find("price").text()+"<br>";
-						s+="갯수: "+m.find("cnt").text();
+						s+="가격: "+m.find("price").text()+"원<br>";
+						s+="갯수: "+m.find("cnt").text()+"개";
 						s+="</div>";
 					})
 					
@@ -66,11 +66,8 @@
 				}
 			})
 		})
-		
 	})
-	
-	
-	
+
 </script>
 </head>
 <body>

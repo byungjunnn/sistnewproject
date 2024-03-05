@@ -13,7 +13,7 @@
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
 	
-	String sql="select * from food order by num";
+	String sql="select * from info order by num";
 	
 	try{
 		pstmt=conn.prepareStatement(sql);
@@ -21,17 +21,18 @@
 		
 		while(rs.next()){
 			String num=rs.getString("num");
-			String foodname=rs.getString("foodname");
-			String foodphoto=rs.getString("foodphoto");
-			int price=rs.getInt("price");
-			int cnt=rs.getInt("cnt");
+			String name=rs.getString("name");
+			String hp=rs.getString("hp");
+			String age=rs.getString("age");
+			String photo=rs.getString("photo");
+			
 			%>
-			<food num="<%=num %>">
-				<foodname><%=foodname %></foodname>
-				<foodphoto><%=foodphoto %></foodphoto>
-				<price><%=price %></price>
-				<cnt><%=cnt %></cnt>
-			</food>	
+			<info num="<%=num %>">
+				<name><%=name %></name>
+				<hp><%=hp %></hp>
+				<age><%=age %></age>
+				<photo><%=photo %></photo>
+			</info>	
 			
 		<%}
 	}catch(SQLException e){

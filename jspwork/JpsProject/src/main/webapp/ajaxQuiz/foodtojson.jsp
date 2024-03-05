@@ -1,12 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="mysql.db.DbConnect"%>
-<%@ page language="java" contentType="text/xml; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<data>
 <%
 	DbConnect db=new DbConnect();
 	Connection conn=db.getConnection();
@@ -14,6 +12,8 @@
 	ResultSet rs=null;
 	
 	String sql="select * from food order by num";
+	
+	String s="[";
 	
 	try{
 		pstmt=conn.prepareStatement(sql);
@@ -25,19 +25,23 @@
 			String foodphoto=rs.getString("foodphoto");
 			int price=rs.getInt("price");
 			int cnt=rs.getInt("cnt");
-			%>
-			<food num="<%=num %>">
-				<foodname><%=foodname %></foodname>
-				<foodphoto><%=foodphoto %></foodphoto>
-				<price><%=price %></price>
-				<cnt><%=cnt %></cnt>
-			</food>	
 			
-		<%}
+			//json 파싱 "num":num 형태
+			s+="{";
+			s+="\"num\":"+num+",\"foodname\":\""+foodname+"\",\"foodphoto\":\""+foodphoto;
+			s+="\",\"price\":"+price+",\"cnt\":"+cnt;
+			s+="},";
+		}
+		
+		//마지막 컴마제거
+		s=s.substring(0, s.length()-1);
+		
 	}catch(SQLException e){
 		
 	}finally{
 		db.dbClose(rs, pstmt, conn);
 	}
+	s+="]";
 %>
-</data>
+
+<%=s%>
