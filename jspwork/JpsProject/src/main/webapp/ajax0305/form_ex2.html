@@ -64,10 +64,10 @@
 				url:"read_ex2.jsp",
 				dataType:"json",
 				data:data,
-				success:function(data){
+				success:function(data){ //읽어온 데이터들
 					
 					var s="코드: "+data.code+"<br>";
-					s+="상품명: "+data.name+"<br>";
+					s+="상품명: "+  data.name+"<br>";
 					s+="가격: "+data.price+"<br>";
 					s+="색상: "+data.color+"<br>";
 					
