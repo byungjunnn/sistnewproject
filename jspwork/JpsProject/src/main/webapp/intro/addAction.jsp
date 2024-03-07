@@ -24,14 +24,13 @@
 		String[] hobby=request.getParameterValues("hobby");
 
 		String s="";
-		if(hobby==null){
-			s+="없음";
+		if(hobby==null){ 
+			s="없음";
 		}else{
 			for(int i=0;i<hobby.length;i++){
 				s+=hobby[i]+", ";
-				
 			}
-			s=s.substring(0, hobby.length()-1);
+			s=s.substring(0, s.length()-2);
 		}
 		dto.setHobby(s);
 		dao.insertIntro(dto);
