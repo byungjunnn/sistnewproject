@@ -10,7 +10,7 @@
 		<spring>66</spring>
 		<ajax>98</ajax>
 	</stu>
-		<stu name="김대호">
+	<stu name="김대호">
 		<java>88</java>
 		<spring>99</spring>
 		<ajax>100</ajax>

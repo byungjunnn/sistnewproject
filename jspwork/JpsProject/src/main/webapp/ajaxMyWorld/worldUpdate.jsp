@@ -15,18 +15,20 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	
-	//데이터 읽기(writer, content, avata)
-	String writer=request.getParameter("writer");
-	String content=request.getParameter("content");
-	String avata=request.getParameter("avata");
+	//데이터 읽기
+	String uwriter=request.getParameter("uwriter");
+	String ucontent=request.getParameter("ucontent");
+	String uavata=request.getParameter("uavata");
+	String unum=request.getParameter("unum");
 	
 	WorldDto dto=new WorldDto();
-	dto.setWriter(writer);
-	dto.setContent(content);
-	dto.setAvata(avata);
+	dto.setWriter(uwriter);
+	dto.setContent(ucontent);
+	dto.setAvata(uavata);
+	dto.setNum(unum);
 	
 	WorldDao dao=new WorldDao();
-	dao.insertworld(dto);
+	dao.worldUpdate(dto);
 %>
 </body>
 </html>
