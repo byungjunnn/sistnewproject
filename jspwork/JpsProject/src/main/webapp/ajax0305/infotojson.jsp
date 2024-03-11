@@ -11,7 +11,7 @@
 	PreparedStatement pstmt=null;
 	ResultSet rs=null;
 	
-	String sql="select * from info order by num";
+	String sql="select * from  info order by num";
 	
 	String s="[";
 	
