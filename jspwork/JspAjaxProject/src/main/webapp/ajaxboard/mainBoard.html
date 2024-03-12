@@ -39,7 +39,7 @@
 		
 		list();
 		
-		//입력폼 처음에 안 보이게
+		//입력폼, 수정폼 처음에 안 보이게
 		$("div.writeform").hide();
 		$("div.updateform").hide();
 		//글쓰기버튼 누르면 보이게
@@ -103,7 +103,7 @@
 					s+="<button type='button' class='btn btn-warning btn-sm btnupdate' num='"+res.num+"'>수정</button>"
 					s+="<button type='button' class='btn btn-danger btn-sm btndelete' num='"+res.num+"'>삭제</button>"
 					s+="</td></tr>";
-					s+="</table>";
+					s+="</table>"; 
 					
 					//출력
 					$("div.detail").html(s);
@@ -138,11 +138,10 @@
 				}
 			})
 		})
-		//수정버튼 누르면 num의 해당값들 불러옴
+		//디테일페이지에서 수정버튼 누르면 num의 해당값들 불러
 		$(document).on("click",".btnupdate",function(){
 			var unum=$(this).attr("num");
 			//alert(unum);
-			$("#unum").val(unum);
 			
 			$.ajax({
 				type:"get",
@@ -165,7 +164,8 @@
 		})
 			
 		$("#btnupdate").click(function() {
-			
+			//var s=$("#updatefrm").serialize(); 폼안에 있는 name을 한번에 읽어옴
+			//alert(s);
 			var unum=$("#unum").val();
 			var uwriter=$("#uwriter").val();
 			var usubject=$("#usubject").val();
@@ -173,7 +173,7 @@
 			var ucontent=$("#ucontent").val();
 			var s="uwriter="+uwriter+"&usubject="+usubject+"&uavata="+uavata+"&ucontent="+ucontent+"&unum="+unum;
 			$.ajax({
-				type:"get",
+				type:"post",
 				url:"updateBoard.jsp",
 				dataType:"html",
 				data:s,
@@ -282,15 +282,15 @@
 	</div>
 	
 	<div class="updateform" style="width: 400px;">
-		<form action="#">
+		<form id="updatefrm">
 			<table class="table table-bordered">
-				<input type="hidden" id="unum">
+				<input type="hidden" id="unum" name="unum">
 				<caption align="top"><b>게시글 수정</b></caption>
 				<tr>
 					<th class="table-dark">작성자</th>
 					<td>
 						<input type="text" id="uwriter" style="width: 120px;"
-						class="form-control">
+						class="form-control" name="uwriter">
 					</td>
 				</tr>
 				
@@ -298,14 +298,14 @@
 					<th class="table-dark">제목</th>
 					<td>
 						<input type="text" id="usubject" style="width: 270px;"
-						class="form-control">
+						class="form-control" name="usubject">
 					</td>
 				</tr>
 				
 				<tr>
 					<th class="table-dark">아바타</th>
 					<td>
-						<select id="uavata" class="form-control" style="width: 100px">
+						<select id="uavata" name="uavata" class="form-control" style="width: 100px">
 							<option value="../image/avata/b1.png">시랑해</option>
 							<option value="../image/avata/b8.png">최고</option>
 							<option value="../image/avata/b7.png">야호</option>
@@ -319,13 +319,13 @@
 				<tr>
 					<td colspan="2" align="center">
 						<textarea style="width: 380px; height: 100px;" id="ucontent"
-						class="form-control"></textarea>
+						class="form-control" name="ucontent"></textarea>
 					</td>
 				</tr>
 				
 				<tr>
 					<td colspan="2" align="center">
-						<button type="button" class="btn btn-success"
+						<button type="button" class="btn btn-success" style="font-family: Nanum Pen Script"
 						id="btnupdate">DB수정</button>
 					</td>
 				</tr>
