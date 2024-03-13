@@ -105,4 +105,48 @@ public class QuizShopDao {
 		}
 		return dto;
 	}
+	
+	//수정
+	public void updateQuizShop(QuizShopDto dto) {
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		
+		String sql="update quizshop set sang_name=?,photo=?,price=?,ipgoday=? where num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getSang_name());
+			pstmt.setString(2, dto.getPhoto());
+			pstmt.setInt(3, dto.getPrice());
+			pstmt.setString(4, dto.getIpgoday());
+			pstmt.setString(5, dto.getNum());
+			pstmt.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
+	
+	//삭제
+	public void deleteQuizShop(String num) {
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		
+		String sql="delete from quizshop where num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, num);
+			pstmt.execute();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
 }

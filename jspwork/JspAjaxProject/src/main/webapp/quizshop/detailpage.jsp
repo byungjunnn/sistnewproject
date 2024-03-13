@@ -28,14 +28,14 @@
 				<caption align="top"><b>상세페이지</b></caption>
 				<tr class="table-dark" style="text-align: center">
 					<th width="120"><b>상품사진</b></th>
-					<th width="100"><b>상품명</b></th>
+					<th width="120"><b>상품명</b></th>
 					<th width="100"><b>가격</b></th>
 					<th width="100"><b>입고일</b></th>				
 				</tr>
 				
 				<tr>
 					<td align="center">
-						<img src="../image/쇼핑몰사진/<%=dto.getPhoto() %>.jpg" width="150" height="150">
+						<img src="../image/쇼핑몰사진/<%=dto.getPhoto() %>.jpg" width="130" height="130">
 					</td>
 					<td style="line-height: 130px; text-align: center"><%=dto.getSang_name() %></td>
 					<td style="line-height: 130px; text-align: center"><%=dto.getPrice() %>원</td>
