@@ -21,36 +21,41 @@
 	dao.updateReadCount(num);
 %>
 <body>
-	<div style="margin: 50px 100px; width: 300px">
+	<div style="margin: 50px 100px; width: 900px">
 		<table class="table talbe-bordered">
-			<%
-			      for (int i=0; i<(list.size()/5);i++) {%>
-			    	  <tr align="center" style="font-family: Gowun Dodum">
-			    	  <%
-			         for(int j=0; j<list.size();j++){
-			         	UploadBoardDto dto = list.get(j);
-			       	 	if(j%5==0){%>
-			       	 	<td>
-				         <img alt="" src="../save/<%=dto.getImgname()%>"
-					     style="width: 200px; height: 200px"><br>
-					     제목: <%=dto.getSubject()%><br>
+			<caption align="top"><b>앨범형 목록</b>
+				<button type="button" class="btn btn-info" onclick="location.href='addform.jsp'">글쓰기</button>
+			</caption>
+			<tr>
+				<%
+					for(int i=0;i<list.size();i++){
+						int no=list.size()-i;
+						UploadBoardDto dto = list.get(i);
+						%>
+					<td>
+						<a href="content.jsp?num=<%=dto.getNum()%>" style="text-decoration: none; color: black">
+						<img alt="" src="../save/<%=dto.getImgname()%>"
+					     style="width: 200px; height: 200px; border: 1px solid gray; margin: 5px">
+					     <br>
 					     작성자: <%=dto.getWriter()%><br>
-					     <%=sdf.format(dto.getWriteday())%>
-					     조회: <%=dto.getReadcount()%></td>
-			       	 	</tr>
-			       	 	<%}else{%>
-				         <td>
-				         <img alt="" src="../save/<%=dto.getImgname()%>"
-					     style="width: 200px; height: 200px"><br>
-					     제목: <%=dto.getSubject()%><br>
-					     작성자: <%=dto.getWriter()%><br>
-					     <%=sdf.format(dto.getWriteday())%>
-					     조회: <%=dto.getReadcount()%></td>
-					     <%}
-			         }
-			    	  %></tr><%
-					}%>
+					     제목: <%=dto.getSubject()%></a><br>
+					     <span style="color: gray; font-size: 10pt;">
+					     	조회: <%=dto.getReadcount()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					     	<%=sdf.format(dto.getWriteday())%>
+					     </span>
+					     <br><br>
+					</td>
+						<%
+							if((i+1)%4==0){
+							%>
+								</tr>
+								<tr>								
+							<%}
+						%>
+					<%}
+				%>
 			</tr>
 		</table>
+	</div>
 </body>
 </html>

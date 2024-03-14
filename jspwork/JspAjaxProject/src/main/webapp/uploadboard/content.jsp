@@ -33,15 +33,15 @@
 </style>
 </head>
 <%
-String num = request.getParameter("num");
-UploadBoardDao dao = new UploadBoardDao();
-UploadBoardDto dto = dao.getData(num);
-dao.updateReadCount(num);
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+	String num = request.getParameter("num");
+	UploadBoardDao dao = new UploadBoardDao();
+	UploadBoardDto dto = dao.getData(num);
+	dao.updateReadCount(num);
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
 %>
 <body>
 
-   <form action="addForm.jsp" method="post">
+   <form action="addForm.jsp" metho="post">
    <div style="margin: 50px 100px; width: 500px" class="div1">
       <div class="div2">
          <h3><%=dto.getSubject() %></h3>
@@ -60,10 +60,14 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm");
       
       </div>
       <div class="div4">
-         <button type="submit" class="btn btn-success"><i class="bi bi-pencil"></i>  글쓰기</button>
-         <button type="button" class="btn btn-outline-warning" style="margin-left: 235px;">목록</button>
-         <button type="button" class="btn btn-outline-dark" >수정</button>
-         <button type="button" class="btn btn-outline-danger">삭제</button>
+         <button type="submit" class="btn btn-success"><i class="bi bi-pencil"
+         onclick="location.href='addform.jsp'"></i>  글쓰기</button>
+         <button type="button" class="btn btn-outline-warning" style="margin-left: 235px;"
+         onclick="location.href='boardlist.jsp'">목록</button>
+         <button type="button" class="btn btn-outline-dark"
+         onclick="location.href='updateform.jsp?num=<%=dto.getNum()%>'">수정</button>
+         <button type="button" class="btn btn-outline-danger"
+         onclick="location.href='deleteform.jsp?num=<%=dto.getNum()%>'">삭제</button>
       </div>
    </form>
    

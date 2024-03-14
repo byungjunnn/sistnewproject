@@ -23,7 +23,7 @@
 		System.out.println(realFolder);
 		
 		//업로드 사이즈
-		int uploadSize=1024*1024*4; //3MB
+		int uploadSize=1024*1024*4; //4MB
 		
 		//생성자 파라메터(request,업로드폴더,업로드사이즈,한글,같은이름일경우1,2 붙히기)
 		try{
