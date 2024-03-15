@@ -1,3 +1,5 @@
+<%@page import="simpleboardanswer.model.SimpleAnswerDao"%>
+<%@page import="simpleboardanswer.model.SimpleAnswerDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,22 +11,21 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 </head>
-<%
-	String num=request.getParameter("num");
-%>
 <body>
- <div style="margin: 200px 200px; width: 300px;">
- 	<form action="deletepassaction.jsp" method="post">
- 		<input type="hidden" name="num" value="<%=num%>">
- 		<div class="d-inline-flex">
- 			<h5 style="width: 100px">비밀번호</h5>
- 			<input type="password" class="form-control" required="required"
- 			name="pass" style="width: 150px;">
- 		</div>
- 		<br><br>
- 		<button type="submit" class="btn btn-danger"
- 		style="margin-left: 100px;">삭제</button>
- 	</form>
- </div>
+	<%
+	request.setCharacterEncoding("utf-8");
+	
+	String num=request.getParameter("num");
+	String nickname=request.getParameter("nickname");
+	String content=request.getParameter("content");
+	
+	SimpleAnswerDto dto=new SimpleAnswerDto();
+	dto.setNum(num);
+	dto.setNickname(nickname);
+	dto.setContent(content);
+
+	SimpleAnswerDao dao=new SimpleAnswerDao();
+	dao.insertAnswer(dto);
+%>
 </body>
 </html>

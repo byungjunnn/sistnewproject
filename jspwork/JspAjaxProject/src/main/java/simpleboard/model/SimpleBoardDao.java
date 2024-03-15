@@ -131,7 +131,7 @@ public class SimpleBoardDao {
 		//가장 최근에 추가된 글의 num값 알기
 		public int getMaxNum() {
 			
-			int max=0;
+			int max=0; 
 			
 			Connection conn=db.getConnection();
 			PreparedStatement pstmt=null;
@@ -219,5 +219,77 @@ public class SimpleBoardDao {
 				db.dbClose(rs, pstmt, conn);
 			}
 			return list;
+		}
+		
+		//삭제
+		public void deleteSimpleBoard(String num) {
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			
+			String sql="delete from simpleboard where num=?";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, num);
+				pstmt.execute();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(pstmt, conn);
+			}
+		}
+		
+		//수정,삭제할 때 num과 pass받아서 비번이 같으면 true, 틀리면 false반환
+		public boolean isEqualPass(String num, String pass) {
+			boolean b=false;
+			
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+			
+			String sql="select count(*) from simpleboard where num=? and pass=?";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, num);
+				pstmt.setString(2, pass);
+				rs=pstmt.executeQuery();
+				
+				if(rs.next()) {
+					if(rs.getInt(1)==1) { //1은 비번이 맞으면
+						b=true;
+					}
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(rs, pstmt, conn);
+			}
+			return b;
+		}
+		
+		//수정
+		public void updateSimpleBoard(SimpleBoardDto dto) {
+			Connection conn=db.getConnection();
+			PreparedStatement pstmt=null;
+			
+			String sql="update simpleboard set writer=?, pass=?, subject=?, content=? where num=?";
+			
+			try {
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, dto.getWriter());
+				pstmt.setString(2, dto.getPass());
+				pstmt.setString(3, dto.getSubject());
+				pstmt.setString(4, dto.getContent());
+				pstmt.setString(5, dto.getNum());
+				pstmt.execute();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				db.dbClose(pstmt, conn);
+			}
 		}
 }

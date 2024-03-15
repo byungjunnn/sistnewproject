@@ -111,8 +111,7 @@
 					<tr>
 						<td align="center"><%=no-- %></td>
 						<td align="center">
-						<a href="contentview.jsp?num=<%=dto.getNum()%>">
-							<%=dto.getSubject() %>
+						<a href="contentview.jsp?num=<%=dto.getNum()%>"><%=dto.getSubject() %>
 						</a>
 						</td>
 						<td align="center"><%=dto.getWriter() %></td>
@@ -153,7 +152,7 @@
 			<li class="page-item">
 			<a class="page-link" href="boardlist.jsp?currentPage=<%=endPage+1%>"
 			style="color: black">다음</a>
-			</li>	
+			</li>
 		<%}
 	%>
 	</ul>
