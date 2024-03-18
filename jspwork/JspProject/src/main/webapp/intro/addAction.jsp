@@ -10,13 +10,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-	request.setCharacterEncoding("utf-8");
-%>
+	<%
+		request.setCharacterEncoding("utf-8");
+	%>
 
-	<jsp:useBean id="dao" class="intro.model.introDao"/>
-	<jsp:useBean id="dto" class="intro.model.introDto"/>
-	<jsp:setProperty property="*" name="dto"/>
+		<jsp:useBean id="dao" class="intro.model.introDao"/>
+		<jsp:useBean id="dto" class="intro.model.introDto"/>
+		<jsp:setProperty property="*" name="dto"/>
 	
 	<%
 		String hometown=request.getParameter("hometown");

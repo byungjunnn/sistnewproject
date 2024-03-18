@@ -45,7 +45,7 @@
 				<tr>
 					<th>거주지역</th>
 					<td>
-						<label><input type="radio" name="hometown" value="서울" checked="checked" <%=dto.getHometown().equals("서울")?"checked":"" %>>서울</label>
+						<label><input type="radio" name="hometown" value="서울" <%=dto.getHometown().equals("서울")?"checked":"" %>>서울</label>
 						<label><input type="radio" name="hometown" value="경기" <%=dto.getHometown().equals("경기")?"checked":"" %>>경기</label>
 						<label><input type="radio" name="hometown" value="인천" <%=dto.getHometown().equals("인천")?"checked":"" %>>인천</label>
 						<label><input type="radio" name="hometown" value="대전" <%=dto.getHometown().equals("대전")?"checked":"" %>>대전</label>

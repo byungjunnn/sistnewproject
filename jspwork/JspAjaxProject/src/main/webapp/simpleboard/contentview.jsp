@@ -94,6 +94,62 @@
 				})
 			}
 		})
+		//댓글 글자 누르면 댓글창 나오게
+		$("b.acount").click(function(){
+			$("div.aupdateform").hide();
+			$("div.aform").toggle();
+		})
+		
+		//수정 댓글창 안보이게
+		$("div.aupdateform").hide();
+		
+		//댓글리스트의 수정아이콘 누르면 수정댓글창에 해당 idx의 내용 띄우기
+		$(document).on("click",".amod",function(){
+			$("div.aform").hide();
+			$("div.aupdateform").show();
+			
+			var idx=$(this).attr("idx");
+			//alert(idx);
+			$("#idx").val(idx);
+			
+			$.ajax({
+				type:"get",
+				dataType:"json",
+				url:"../simpleboardanswer/oneDataAnswer.jsp",
+				data:{"idx":idx},
+				success:function(res){
+					$("#idx").val(res.idx);
+					$("#unickname").val(res.nickname);
+					$("#ucontent").val(res.content);
+					
+				}
+				
+			})
+			
+			
+		})
+		
+		//수정
+		$("#btnUsend").click(function(){
+			var idx=$("#idx").val();
+			var nickname=$("#unickname").val();
+			var content=$("#ucontent").val();
+			//alert(idx+","+nickname+","+content);
+			
+			$.ajax({
+				type:"get",
+				url:"../simpleboardanswer/updateAnswer.jsp",
+				dataType:"html",
+				data:{"idx":idx,"nickname":nickname,"content":content},
+				success:function(){
+					
+					list();
+					$("div.aupdateform").hide();
+					$("div.aform").show();
+				}
+			})
+		})
+		
 	})
 	
 	function list(){
@@ -158,7 +214,7 @@
 			<tr>
 				<td>
 					<b class="acount">댓글 <span>0</span></b>
-					<div class="alist">
+					<div class="alist" id="alist">
 						댓글목록
 					</div>
 					<div class="aform input-group">
@@ -170,6 +226,20 @@
 						<button type="button" id="btnsend"
 						class="btn btn-info btn-sm" style="margin-left: 10px">저장</button>
 					</div>
+					
+					<!-- 수정창 -->
+					<div class="aupdateform input-group">
+					<input type="hidden" id="idx">
+						<input type="text" id="unickname" class="form-control"
+						style="width: 100px;" placeholder="닉네임">
+						<input type="text" id="ucontent" class="form-control"
+						style="width: 300px; margin-left: 10px" placeholder="댓글메세지">
+						
+						<button type="button" id="btnUsend"
+						class="btn btn-success btn-sm" style="margin-left: 10px">수정</button>
+					</div>
+					
+					
 				</td>
 			</tr>
 			

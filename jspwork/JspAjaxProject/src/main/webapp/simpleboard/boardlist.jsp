@@ -1,3 +1,4 @@
+<%@page import="simpleboardanswer.model.SimpleAnswerDao"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="simpleboard.model.SimpleBoardDto"%>
 <%@page import="java.util.List"%>
@@ -78,6 +79,14 @@
 	//List<SimpleBoardDto> list=dao.getAllDatas();
 	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm");
 	//int count=list.size();
+	
+	
+	//list의 각 dto에 댓글갯수 저장해두기
+	SimpleAnswerDao adao=new SimpleAnswerDao(); //댓글 dao
+	for(SimpleBoardDto dto:list){
+		int acount=adao.getAllDatas(dto.getNum()).size();
+		dto.setAnswercount(acount);
+	}
 %>
 <body>
 <div style="margin: 50px 100px; width: 800px">
@@ -113,6 +122,14 @@
 						<td align="center">
 						<a href="contentview.jsp?num=<%=dto.getNum()%>"><%=dto.getSubject() %>
 						</a>
+						
+						<!-- 댓글갯수 -->
+						<%
+							if(dto.getAnswercount()>0){
+							%>
+								<a href="contentview.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>#alist" style="color: red">[<%=dto.getAnswercount() %>]</a>									
+							<%}
+						%>
 						</td>
 						<td align="center"><%=dto.getWriter() %></td>
 						<td align="center"><%=sdf.format(dto.getWriteday()) %></td>
