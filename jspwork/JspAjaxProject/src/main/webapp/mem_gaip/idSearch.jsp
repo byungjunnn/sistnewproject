@@ -32,7 +32,8 @@
 						<input type="text" name="m_id" class="form-control"
 						style="width: 130px" required="required" placeholder="아이디 입력">
 						<input type="hidden" name="key" value="yes">
-						<button type="submit"class="btn btn-success" style="margin-left: 10px;">중복체크</button>
+						<button type="submit"class="btn btn-success"
+						style="margin-left: 10px;">중복체크</button>
 						</div>
 					</form>
 				</div>

@@ -21,7 +21,7 @@ public class MemgaipDao {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		String sql="select *from memgaip where m_id=?";
+		String sql="select * from memgaip where m_id=?";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -156,7 +156,7 @@ public class MemgaipDao {
 	}
 		
 	//삭제
-	public void deletdMemgaip(String num) {
+	public void deletdMemgaip(String m_num) {
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
 		
@@ -164,7 +164,62 @@ public class MemgaipDao {
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, num);
+			pstmt.setString(1, m_num);
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
+	
+	//num에 대한 dto 조회
+	public MemgaipDto getOneData(String m_num) {
+		MemgaipDto dto=new MemgaipDto();
+		
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		ResultSet rs=null;
+		
+		String sql="select * from memgaip where m_num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, m_num);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setM_num(rs.getString("m_num"));
+				dto.setM_id(rs.getString("m_id"));
+				dto.setM_pass(rs.getString("m_id"));
+				dto.setM_name(rs.getString("m_name"));
+				dto.setM_hp(rs.getString("m_hp"));
+				dto.setM_photo(rs.getString("m_photo"));
+				dto.setGaipday(rs.getTimestamp("gaipday"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(rs, pstmt, conn);
+		}
+		return dto;
+	}
+	
+	//수정
+	public void updateMemgaip(MemgaipDto dto) {
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		
+		String sql="update memgaip set m_name=?, m_hp=?, m_photo=? where m_num=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getM_name());
+			pstmt.setString(2, dto.getM_hp());
+			pstmt.setString(3, dto.getM_photo());
+			pstmt.setString(4, dto.getM_num());
 			pstmt.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

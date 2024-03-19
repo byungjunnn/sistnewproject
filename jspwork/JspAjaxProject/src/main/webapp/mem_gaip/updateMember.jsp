@@ -35,14 +35,14 @@
 	dto.setM_name(multi.getParameter("m_name"));
 	
 	String photo=multi.getFilesystemName("m_photo");
-	dto.setM_photo(photo);
 	
-	/* if(photo==null){
-			dto.setM_photo("../image/연예인사진/noimage.png"); //사진 선택 안 함
-		}else{
-			dto.setM_photo("../upload/"+photo); // 선택한 경우
-		} */
-	dao.insertMemgaip(dto);
+	if(photo==null){
+		String oldphoto=dao.getOneData(dto.getM_num()).getM_photo();
+		dto.setM_photo(oldphoto); //사진 선택 안 하면 기존 사진 그대로 넣기
+	}else{
+		dto.setM_photo("../upload/"+photo); // 선택한 경우
+	}
+	dao.updateMemgaip(dto);
 	//성공 후 목록이동
 	response.sendRedirect("memList.jsp");
 %>
