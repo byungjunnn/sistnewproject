@@ -21,6 +21,10 @@
 	div.list{
 		width: 800px;
 	}
+	
+	.detail{
+		cursor: pointer;
+	}
 </style>
 <script type="text/javascript">
 	$(function(){
@@ -93,12 +97,23 @@
 					$("span.writer").html(res.writer);
 					$("div.story").html("<pre>"+res.story+"</pre>");
 					$("div.image").html("<img src='"+res.image+"'>");
-					
+					$(".deletebtn").attr("num",res.num);
 					$("div.list").hide();
 					$("div.detailview").show();
 				}
 			})
 		})
+		
+		$(document).on("click","button.addbtn",function(){
+			$("div.detailview").hide();
+		})
+		
+		//삭제
+		$(".deletebtn").click(function(){
+			var num=$(this).attr();
+			
+		})
+		
 	})
 	
 	function list(){
@@ -132,7 +147,7 @@
 						//출력
 						s+="<tr>"
 						s+="<td align=center>"+(i+1)+"</td>";
-						s+="<td align=center num='"+ele.num+"' class='detail'>"+ele.subject+"</td>";
+						s+="<td align=center num='"+ele.num+"' class='detail'>"+ele.subject+"</a></td>";
 						s+="<td align=center>"+ele.writer+"</td>";
 						s+="<td align=center>"+ele.writeday+"</td>";
 						s+="<td align=center>"+ele.likes+"</td>";
@@ -202,9 +217,63 @@
 			</table>
 		</form>
 	</div>
-	<div class="board updateform">수정폼</div>
+	<div class="board updateform" style="margin: 50px 100px; width: 400px">
+		<form id="updatefrm">
+			<table class="table table-bordered">
+				<caption align="top"><b>😊글 수정😊</b></caption>
+				<tr>
+					<th width="100" class="table-dark" style="text-align: center" valign="middle">작성자</th>
+					<td>
+						<input type="text" name="uwriter" id="uwriter"
+						class="form-control" required="required" style="width: 130px">
+					</td>
+				</tr>
+				
+				<tr>
+					<th width="100" class="table-dark" style="text-align: center" valign="middle">제목</th>
+					<td>
+						<input type="text" name="usubject" id="usubject"
+						class="form-control" required="required" style="width: 250px">
+					</td>
+				</tr>
+				
+				<tr>
+					<th width="100" class="table-dark" style="text-align: center" valign="middle">내용</th>
+					<td>
+						<textarea style="width: 300px; height: 100px;"
+						name="ustory" id="ustory" required="required"
+						class="form-control"></textarea>
+					</td>
+				</tr>
+				
+				<tr>
+					<th width="100" class="table-dark" style="text-align: center" valign="middle">이미지</th>
+					<td>
+						<input type="hidden" name="uimage" id="uimage" width="100%">
+						<select id="uselimage" style="width: 100px;" class="form-control">
+							<option value="../image/avata/b1.png">사랑해</option>
+							<option value="../image/avata/b2.png">우울함</option>
+							<option value="../image/avata/b5.png">배고파</option>
+							<option value="../image/avata/b6.png">좌절</option>
+							<option value="../image/avata/b10.png">심심해</option>
+							<option value="../image/avata/b8.png">최고</option>
+						</select><br>
+						<div id="uimgview"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button type="button" class="btn btn-warning" id="btnupdate">DB수정</button>
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
 	<div class="board list">목록</div>
+	
 	<div class="board detailview">
+	<input type="hidden" name="num" id="num" value=""> 
 		<table class="story table table-bordered" style="width: 600px">
 			<caption align="top"><b>게시글 확인</b></caption>
 			<tr>
@@ -220,7 +289,7 @@
 					<i class="bi bi-suit-heart-fill" style="color: red;"></i>
 						<span class="su">0</span>
 					</span>
-				</td>		
+				</td>
 			</tr>
 			<tr>
 				<td style="height: 200px;" valign="top">
