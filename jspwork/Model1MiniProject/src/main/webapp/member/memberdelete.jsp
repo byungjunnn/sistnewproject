@@ -1,3 +1,4 @@
+<%@page import="data.dao.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,16 +11,12 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- 관리자가 강퇴시키는 페이지 -->
 <%
-	//세션에 저장된 loginok를 읽어오기
-	String loginok=(String)session.getAttribute("loginok"); //오브젝트이므로 string형변환
-	if(loginok==null){ //로그아웃상태
-	%>
-		<jsp:include page="loginform.jsp"/>	
-	<%}else{%>
-		<jsp:include page="logoutform.jsp"/>
-	<%}
-	
+	String num=request.getParameter("num");
+	MemberDao dao=new MemberDao();
+	dao.deleteMember(num);
+	response.sendRedirect("../index.jsp?main=member/memberlist.jsp");
 %>
 </body>
 </html>

@@ -10,10 +10,6 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 </head>
-<%
-	//프로젝트 경로(절대경로)
-	String root=request.getContextPath();
-%>
 <body>
 <%
 	String id=request.getParameter("id");
@@ -21,12 +17,13 @@
 	MemberDao dao=new MemberDao();
 	String name=dao.getName(id);
 %>
-<br><br>
-<h4 class="alert alert-warning" style="width: 400px"><%=name %>님이 가입하셨습니다</h4>
-<img alt="" src="<%=root%>/image/avata/b1.png">
-<input value="로그인" class="btn btn-info" type="button"
-onclick="location.href='index.jsp?main=login/loginmain.jsp'">
-<input value="메인" class="btn btn-success" type="button"
-onclick="location.href='index.jsp'">
+<div style="margin: 100px 250px;">
+	<img alt="" src="image/avata/b1.png"><br>
+	<h5 class="alert alert-dark" style="width: 350px"><<%=name %>>님의 가입을 축하합니다</h5>
+	<input value="로그인" class="btn btn-outline-info" type="button"
+		onclick="location.href='index.jsp?main=login/loginmain.jsp'">
+	<input value="마이페이지" class="btn btn-outline-success" type="button"
+		onclick="location.href='index.jsp?main=member/mypage.jsp'">
+</div>
 </body>
 </html>

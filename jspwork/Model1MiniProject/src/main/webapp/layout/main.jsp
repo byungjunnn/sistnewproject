@@ -15,12 +15,12 @@
 %>
 <body>
 	<img src="<%=root%>/image/cafe.png" width="580" height="350">
-	<img src="<%=root%>/image/cafe2.jpg" width="580" height="350"><br>
-	<img src="<%=root%>/image/cafemenu.jpg"><br><br>
+	<img src="<%=root%>/image/cafe2.jpg" width="580" height="350" style="float: right"><br>
+	<img src="<%=root%>/image/cafemenu1.jpg" width="1200"><br><br>
 	<h3>주요 제품 둘러보기</h3>
 	<img src="<%=root%>/image/avata/b3.png">
-	<img src="<%=root%>/image/avata/b5.png"><br>
+	<img src="<%=root%>/image/avata/b5.png">
 	<img src="<%=root%>/image/avata/b6.png">
-	<img src="<%=root%>/image/avata/b7.png"><br>
+	<img src="<%=root%>/image/avata/b7.png">
 </body>
 </html>

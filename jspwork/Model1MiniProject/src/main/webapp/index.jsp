@@ -58,7 +58,7 @@
 </head>
 <%
 	String mainPage="layout/main.jsp"; //기본페이지
-	
+	//System.out.println(request.getParameter(""));
 	//url을 통해서 main값을 읽어서 메인페이지에 출력, 꼭 main이 아니어도 된다!
 	if(request.getParameter("main")!=null){
 		mainPage=request.getParameter("main");
