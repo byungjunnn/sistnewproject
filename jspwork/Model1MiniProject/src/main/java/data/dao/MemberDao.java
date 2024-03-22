@@ -217,10 +217,16 @@ public class MemberDao {
 		Connection conn=db.getConnection();
 		PreparedStatement pstmt=null;
 		
-		String sql="update member set ";
+		String sql="update member set name=?, hp=?, addr=?, email=? where num=?";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getName());
+			pstmt.setString(2, dto.getHp());
+			pstmt.setString(3, dto.getAddr());
+			pstmt.setString(4, dto.getEmail());
+			pstmt.setString(5, dto.getNum());
+			pstmt.execute();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -228,7 +234,6 @@ public class MemberDao {
 		}finally {
 			db.dbClose(pstmt, conn);
 		}
-		
 	}
 	
 	//로그인시 아이디와 비번 체크

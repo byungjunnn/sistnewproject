@@ -33,20 +33,26 @@
 	MemberDao dao=new MemberDao();
 	List<MemberDto> list=dao.getAllMembers();
 	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+	
+	String loginok=(String)session.getAttribute("loginok");
+	String myid=(String)session.getAttribute("myid");
 %>
 <body>
 	<div style="margin: 50px 200px; width: 1200px; font-size: 20pt">
 		<table class="table table-bordered">
 			<%
 				for(MemberDto dto:list){
+					if(loginok!=null && myid.equals(dto.getId())){
 				%>	
 					<tr>
+						<input type="hidden" name="num" value="<%=dto.getNum()%>">
 						<td rowspan="5" align="center">
 							<img src="image/3.jpg" width="400">
 						</td>
 						<td valign="middle">회원명: <%=dto.getName() %></td>
 						<td rowspan="5" align="center" valign="middle">
-							<button type="button" class="btn btn-outline-warning btn-lg">수정</button><br><br>
+							<button type="button" class="btn btn-outline-warning btn-lg"
+							onclick="location.href='index.jsp?main=member/updatepassform.jsp?num=<%=dto.getNum()%>'">수정</button><br><br>
 							<button type="button" class="btn btn-outline-danger btn-lg"
 							onclick="delfunc('<%=dto.getNum()%>')">탈퇴</button>
 						</td>
@@ -65,6 +71,7 @@
 					</tr>
 				<%}
 			%>
+			<% }%>
 			</tr>
 		</table>
 	</div>

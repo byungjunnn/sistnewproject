@@ -12,18 +12,20 @@
 </head>
 <body>
 <%
-	String id=request.getParameter("id");
-	//아이디에 해당하는 이름을 dao로부터 얻어온다
+	String pass=request.getParameter("pass");
+	String num=request.getParameter("num");
+	
 	MemberDao dao=new MemberDao();
-	String name=dao.getName(id);
+	boolean b=dao.isEqualPass(num, pass);
+	
+	if(b){
+		response.sendRedirect("../index.jsp?main=member/updateform.jsp?num="+num);
+	}else{%>
+		<script type="text/javascript">
+			alert("비밀번호가 틀렸습니다");
+			history.back();
+		</script>
+	<%}
 %>
-<div style="margin: 100px 250px;">
-	<img alt="" src="image/avata/b1.png"><br>
-	<h5 class="alert alert-dark" style="width: 350px"><<%=name %>>님의 가입을 축하합니다</h5>
-	<input value="로그인" class="btn btn-outline-info" type="button"
-		onclick="location.href='index.jsp?main=login/loginmain.jsp'">
-	<input value="메인" class="btn btn-outline-success" type="button"
-		onclick="location.href='index.jsp'">
-</div>
 </body>
 </html>
