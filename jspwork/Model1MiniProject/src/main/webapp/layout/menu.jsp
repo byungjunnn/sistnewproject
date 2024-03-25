@@ -53,7 +53,8 @@
 							<li><a href="index.jsp?main=member/addform.jsp"><i class="icon-wrench"></i> 회원가입</a></li>
 							<%
 								if(loginok!=null && myid.equals("admin")){%>
-									<li><a href="index.jsp?main=member/memberlist.jsp"><i class="icon-credit-card"></i>  회원목록</a></li>
+									<li><a href="index.jsp?main=member/memberlist.jsp">
+									<i class="icon-credit-card"></i>  회원목록</a></li>
 								<%}
 							%>
 							<li><a href="index.jsp?main=member/mypage.jsp"><i class="icon-gift"></i> 마이페이지</a></li>
