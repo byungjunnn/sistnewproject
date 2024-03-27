@@ -44,7 +44,7 @@
 							%>
 								<input type="radio" value="<%=i%>"
 								<%=i==n?"checked":"" %> style="width: 40px;"
-								name="image">								
+								name="image">		 						
 							<%}
 						%>
 						<br>

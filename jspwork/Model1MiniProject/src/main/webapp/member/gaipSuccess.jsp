@@ -23,7 +23,7 @@
 	<input value="로그인" class="btn btn-outline-info" type="button"
 		onclick="location.href='index.jsp?main=login/loginmain.jsp'">
 	<input value="메인" class="btn btn-outline-success" type="button"
-		onclick="location.href='index.jsp'">
+		onclick="location.href='index.jsp'"> 
 </div>
 </body>
 </html>

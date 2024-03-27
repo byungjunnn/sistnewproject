@@ -47,16 +47,6 @@
 		})
 		
 	})
-	
-	function check(f) { //f는 form(this) 자신을 나타냄
-		if(f.pass.value!=f.pass2.value){
-			alert("비밀번호가 서로 다릅니다");
-			//초기화
-			f.pass.value="";
-			f.pass2.value="";
-			return false; //action호출하지 않음
-		}
-	}
 </script>
 </head>
 <%

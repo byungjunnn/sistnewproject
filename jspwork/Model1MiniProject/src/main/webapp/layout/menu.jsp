@@ -45,7 +45,7 @@
 						<ul class="sub-menu">
 							<li><a href="index.jsp?main=memberguest/guestlist.jsp"><i class="icon-wrench"></i> 회원방명록</a></li>
 							<li><a href="#"><i class="icon-credit-card"></i>  이미지게시판</a></li>
-							<li><a href="#"><i class="icon-gift"></i> 스마트게시판</a></li>
+							<li><a href="index.jsp?main=smartboard/boardlist.jsp"><i class="icon-gift"></i> 스마트게시판</a></li>
 						</ul>
 					</li>
 					<li><a href="#">회원</a>
