@@ -2,15 +2,14 @@ package data.dto;
 
 import java.sql.Timestamp;
 
-public class AnswerGuestDto {
+public class SmartAnswerDto {
 
 	private String idx;
 	private String num;
-	private String myid;
+	private String nickname;
 	private String content;
 	private Timestamp writeday;
 	
-
 	public String getIdx() {
 		return idx;
 	}
@@ -23,11 +22,11 @@ public class AnswerGuestDto {
 	public void setNum(String num) {
 		this.num = num;
 	}
-	public String getMyid() {
-		return myid;
+	public String getNickname() {
+		return nickname;
 	}
-	public void setMyid(String myid) {
-		this.myid = myid;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	public String getContent() {
 		return content;

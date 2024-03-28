@@ -11,11 +11,24 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<script type="text/javascript">
+	function funcdel(num, currentPage){
+		//alert(num+","+currentPage);
+		var y=confirm("정말 삭제하시겠습니까?");
+		if(y){
+			location.href="smartboard/delete.jsp?num="+num+"&currentPage="+currentPage;			
+		}
+	}
+</script>
 </head>
 <%
 	String num=request.getParameter("num");
+	String currentPage=request.getParameter("currentPage");
 	SmartDao dao=new SmartDao();
+	
+	//dto 내 데이터 가져오기
 	SmartDto dto=dao.getData(num);
+	//조회수 1증가
 	dao.updateReadcount(num);
 	SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 %>
@@ -36,7 +49,7 @@
 			<tr style="font-size: 12pt;">
 				<td style="line-height: 130px; text-align: center"><%=dto.getSubject() %></td>
 				<td style="line-height: 130px; text-align: center"><%=dto.getWriter() %></td>
-				<td style="line-height: 130px; text-align: center"><%=dto.getContent() %></td>
+				<td style="line-height: 130px; text-align: center"><%=dto.getContent().replace("\n", "<br>") %></td>
 				<td style="line-height: 130px; text-align: center"><%=sdf.format(dto.getWriteday()) %></td>
 				<td style="line-height: 130px; text-align: center"><%=dto.getReadcount() %></td>
 			</tr>
@@ -44,17 +57,37 @@
 			<tr>
 				<td colspan="5" align="right">
 					<button type="button" class="btn btn-success btn-sm" name="btnlist"
-					onclick="location.href='index.jsp?main=smartboard/boardlist.jsp'">목록</button>
+					onclick="location.href='index.jsp?main=smartboard/boardlist.jsp?currentPage=<%=currentPage%>'">목록</button>
 					<button type="button" class="btn btn-info btn-sm" name="btnlist"
 					onclick="location.href='index.jsp?main=smartboard/smartform.jsp'">글쓰기</button>
 					<button type="button" class="btn btn-warning btn-sm" name="btnupdate"
-					onclick="location.href=''">수정</button>
+					onclick="location.href='index.jsp?main=smartbord/updateform.jsp?num=<%=num%>&currentPage=<%=currentPage%>'">수정</button>
 					<button type="button" class="btn btn-danger btn-sm" name="btndelete"
-					onclick="location.href=''">삭제</button>
+					onclick="funcdel(<%=num%>,<%=currentPage%>)">삭제</button>
 				</td>
-				</tr>
-			</table>
-		</form>
+			</tr>
+			
+						<!-- 댓글 -->
+			<tr>
+				<td colspan="5">
+					<b class="acount">댓글<span>0</span> </b>
+					
+					<div>
+						댓글목록
+					</div>
+					
+					<div class="aform d-inline-flex">
+						<input type="text" id="nickname" class="form-control" style="width: 100px"
+						placeholder="닉네임">
+						<input type="text" id="content" class="form-control" style="width: 300px"
+						placeholder="댓글메세지">
+						<button type="button" id="btnsend" class="btn btn-primary"
+						onclick="location.href='smartanswer/insertanswer.jsp'">저장</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</form>
 	</div>	
 </body>
 </html>

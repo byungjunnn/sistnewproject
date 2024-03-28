@@ -26,8 +26,40 @@
 </style>
 <script type="text/javascript">
 	$(function(){
+		//전체체크 클릭시 체크값 얻어서 모든 체크값에 전달
 		$(".alldelcheck").click(function(){
-			$(".alldel").checked();
+			
+			//전체 체크값 얻기
+			var chk=$(this).is(":checked");
+			console.log(chk);
+			
+			//전체체크값을 글앞에 체크에 일괄 전달
+			$(".alldel").prop("checked",chk);
+		})
+		
+		//삭제버튼 클릭시 삭제
+		$("#btndel").click(function(){
+			
+			var len=$(".alldel:checked").length;
+			//alert(len);
+			
+			if(len==0){
+				alert("최소 1개 이상의 글을 선택해 주세요");
+			}else{
+				var a=confirm(len+"개의 글을 삭제하려면 [확인]을 눌러주세요");
+				
+				//체크된 곳의 value값(num)얻기
+				var n="";
+				$(".alldel:checked").each(function(idx){
+					n+=$(this).val()+",";
+				})
+				//마지막 컴마 제거
+				n=n.substring(0,n.length-1);
+				console.log(n);
+				
+				//삭제파일로 전송
+				location.href="smartboard/alldelete.jsp?nums="+n;
+			}
 		})
 	})
 </script>
@@ -113,7 +145,7 @@
 				for(SmartDto dto:list){%>
 					<tr>
 						<td align="center">
-						<input type="checkbox" value="<%=dto.getNum()%> class="alldel">&nbsp;&nbsp;
+						<input type="checkbox" value="<%=dto.getNum()%>" class="alldel">&nbsp;&nbsp;
 						<%=no-- %></td>
 						<td ><a href="index.jsp?main=smartboard/contentview.jsp?num=<%=dto.getNum()%>&currentPage=<%=currentPage %>">
 						<span style="text-overflow: ellipsis; white-space: nowrap;
@@ -128,8 +160,8 @@
 					<td colspan="5">
 						<input type="checkbox" class="alldelcheck">&nbsp;&nbsp;전체선택
 						<span style="float: right;">
-						
-							<button type="button" class="btn btn-danger btn-sm" id="btndel"><i class="bi bi-x-circle"></i> 전체삭제</button>
+							<button type="button" class="btn btn-danger btn-sm" id="btndel">
+							<i class="bi bi-x-circle"></i> 전체삭제</button>
 							<button type="button" class="btn btn-info btn-sm"
 							onclick="location.href='index.jsp?main=smartboard/smartform.jsp'"><i class="bi bi-pencil-fill"></i> 글쓰기</button>
 						</span>
