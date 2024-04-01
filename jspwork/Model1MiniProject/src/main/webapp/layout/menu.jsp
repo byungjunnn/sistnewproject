@@ -64,11 +64,24 @@
 					<li class="parent">
 						<a href="#">방명록</a>
 						<ul class="sub-menu">
-							<li><a href="#">회원방명록</a></li>
+							<li><a href="index.jsp?main=memberguest/guestlist.jsp">회원방명록</a></li>
 							<li><a href="#">Medium Image</a></li>
 						</ul>
 					</li>
-					<li><a href="#">찾아오시는 길</a></li>
+					<li class="parent"><a href="#">Shop</a>
+                 		<ul class="sub-menu">
+                 		
+                 		<%
+                 			if(loginok!=null && myid.equals("admin")){
+                 			%>
+	                  			<li><a href="index.jsp?main=shop/addform.jsp"><i class="icon-wrench"></i> 상품등록</a></li>
+                 			<%}else{
+                 			%>
+                    			<li><a href="index.jsp?main=shop/shoplist.jsp"><i class="icon-credit-card"></i> 상품목록</a></li>
+                 			<%}
+                 		%>
+                		</ul>
+             		</li>
 				</ul>
 			</nav>
 			<div class="clear"></div>

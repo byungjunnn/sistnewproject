@@ -106,7 +106,7 @@
 		});
 		
 		//수정
-		/* $(document).on("click", "#btnupdate",function(){
+		$(document).on("click", "#btnupdate",function(){
 			
 			var nickname=$("#unickname").val();
 			var content=$("#ucontent").val();
@@ -122,7 +122,7 @@
 					list();
 				}
 			})
-		}) */
+		})
 		
 	})
 
