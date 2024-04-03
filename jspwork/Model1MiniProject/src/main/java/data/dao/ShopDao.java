@@ -128,7 +128,7 @@ public class ShopDao {
 		}
 	}
 	
-	//cart
+	//cart.. dto가 여러개 사용될 때 hashmap 사용
 	public List<HashMap<String, String>> getCartList(String id){
 		List<HashMap<String, String>> list=new ArrayList<HashMap<String,String>>();
 		
@@ -136,7 +136,7 @@ public class ShopDao {
 		PreparedStatement pstmt=null;
 		ResultSet rs=null;
 		
-		String sql="select c.idx,s.sangpum,s.shopnum,s.photo,s.price,c.cnt,c.cartday from cart c, shop s, member m where c.shopnum=s.shopnum and c.num=m.num and m.id=?;";
+		String sql="select c.idx,s.sangpum,s.shopnum,s.photo,s.price,c.cnt,c.cartday from cart c, shop s, member m where c.shopnum=s.shopnum and c.num=m.num and m.id=?";
 		
 		try {
 			pstmt=conn.prepareStatement(sql);
@@ -164,4 +164,24 @@ public class ShopDao {
 		}
 		return list;
 	}
+	
+	//삭제
+	public void deleteCart(String idx) {
+		Connection conn=db.getConnection();
+		PreparedStatement pstmt=null;
+		
+		String sql="delete from cart where idx=?";
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, idx);
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
+	}
+	
 }

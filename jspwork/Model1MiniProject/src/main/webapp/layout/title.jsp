@@ -28,12 +28,14 @@
 		margin-right: 30px;
 		font-weight: bold;
 	}
-	
-	a.cartlink{
-		text-decoration: none;
-		color: black;
-	}
 </style>
+<script type="text/javascript">
+	$(function(){
+		$("div.cart").click(function(){
+			location.href="index.jsp?main=shop/mycart.jsp";
+		})
+	})
+</script>
 </head>
 <%
 	//프로젝트 경로(절대경로)
@@ -76,10 +78,8 @@
 		int cartSize=sdao.getCartList(myid).size();
 	%>
 	<div class="cart">
-	<a href="index.jsp?main=shop/mycart.jsp" class="cartlink">
 	<i class="bi bi-cart-fill fs-2 carticon"></i>
 	<div class="cartcount">장바구니 [<%=cartSize %>]</div>
-	</a>
 	</div>
 </body>
 </html>
