@@ -78,6 +78,7 @@
           <tags>persp.newWizSC:org.eclipse.jst.jsp.ui.internal.wizard.NewJSPWizard</tags>
           <tags>persp.newWizSC:org.eclipse.jpt.jpa.ui.wizard.newJpaProject</tags>
           <tags>persp.perspSC:org.eclipse.jpt.ui.jpaPerspective</tags>
+          <tags>persp.actionSet:com.quantum.Quantum.actionSet</tags>
           <tags>persp.editorOnboardingText:Open a file or drop files here to open them.</tags>
           <tags>persp.editorOnboardingCommand:Find Actions$$$Ctrl+3</tags>
           <tags>persp.editorOnboardingCommand:Show Key Assist$$$Ctrl+Shift+L</tags>
@@ -270,6 +271,7 @@
           <tags>persp.showIn:org.eclipse.tm.terminal.view.ui.TerminalsView</tags>
           <tags>persp.viewSC:org.eclipse.jdt.bcoview.views.BytecodeOutlineView</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
+          <tags>persp.actionSet:com.quantum.Quantum.actionSet</tags>
           <tags>persp.editorOnboardingImageUri:platform:/plugin/org.eclipse.jdt.ui/$nl$/icons/full/onboarding_jperspective.png</tags>
           <tags>persp.editorOnboardingText:Open a file or drop files here to open them.</tags>
           <tags>persp.editorOnboardingCommand:Find Actions$$$Ctrl+3</tags>
@@ -656,7 +658,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4wo0wsPDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_daaCkNXOEe6bHauY3rZSdw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_4m4d-sPDEe6OJqo-pvxGqg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_qk8ocAwMEe-ozukPuc_ddA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_4m4d-sPDEe6OJqo-pvxGqg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4wo0w8PDEe6OJqo-pvxGqg" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -664,8 +666,8 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4wo0xcPDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.workbench.edit">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_daapodXOEe6bHauY3rZSdw" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_4m4b48PDEe6OJqo-pvxGqg"/>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_daapotXOEe6bHauY3rZSdw" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_4m4ciMPDEe6OJqo-pvxGqg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_qk92kAwMEe-ozukPuc_ddA" elementId="undo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/undo_edit.png" tooltip="Undo" enabled="false" command="_4m4b48PDEe6OJqo-pvxGqg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_qk92kQwMEe-ozukPuc_ddA" elementId="redo" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/redo_edit.png" tooltip="Redo" enabled="false" command="_4m4ciMPDEe6OJqo-pvxGqg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4wo0xsPDEe6OJqo-pvxGqg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -698,7 +700,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4wo0ysPDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_dabQsdXOEe6bHauY3rZSdw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_4m4dncPDEe6OJqo-pvxGqg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_qk-doAwMEe-ozukPuc_ddA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_4m4dncPDEe6OJqo-pvxGqg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4wo0y8PDEe6OJqo-pvxGqg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1006,6 +1008,7 @@
     <bindings xmi:id="_4nLXT8PDEe6OJqo-pvxGqg" keySequence="ALT+SHIFT+D O" command="_4m4cxsPDEe6OJqo-pvxGqg"/>
     <bindings xmi:id="_4nLXUMPDEe6OJqo-pvxGqg" keySequence="ALT+SHIFT+D P" command="_4m4d9MPDEe6OJqo-pvxGqg"/>
     <bindings xmi:id="_4nLXUcPDEe6OJqo-pvxGqg" keySequence="ALT+SHIFT+D Q" command="_4m4cccPDEe6OJqo-pvxGqg"/>
+    <bindings xmi:id="_qd5lQAwMEe-ozukPuc_ddA" keySequence="CTRL+SHIFT+Q" command="_qdpGkQwMEe-ozukPuc_ddA"/>
   </bindingTables>
   <bindingTables xmi:id="_4nCM1cPDEe6OJqo-pvxGqg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" bindingContext="_4m4e-sPDEe6OJqo-pvxGqg">
     <bindings xmi:id="_4nCM1sPDEe6OJqo-pvxGqg" keySequence="CTRL+CR" command="_4mvTRMPDEe6OJqo-pvxGqg"/>
@@ -1321,6 +1324,10 @@
   <bindingTables xmi:id="_4yFmmcPDEe6OJqo-pvxGqg" bindingContext="_4yFmmMPDEe6OJqo-pvxGqg"/>
   <bindingTables xmi:id="_4yFmm8PDEe6OJqo-pvxGqg" bindingContext="_4yFmmsPDEe6OJqo-pvxGqg"/>
   <bindingTables xmi:id="_4yFmncPDEe6OJqo-pvxGqg" bindingContext="_4yFmnMPDEe6OJqo-pvxGqg"/>
+  <bindingTables xmi:id="_qd7acAwMEe-ozukPuc_ddA" elementId="com.quantum.view.sql" bindingContext="_qdq7wAwMEe-ozukPuc_ddA">
+    <bindings xmi:id="_qd7acQwMEe-ozukPuc_ddA" keySequence="CTRL+SHIFT+F" command="_qdptoAwMEe-ozukPuc_ddA"/>
+  </bindingTables>
+  <bindingTables xmi:id="_qkIJEQwMEe-ozukPuc_ddA" bindingContext="_qkIJEAwMEe-ozukPuc_ddA"/>
   <rootContext xmi:id="_4mlg6sPDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.contexts.dialogAndWindow" contributorURI="platform:/plugin/org.eclipse.platform" name="In Dialogs and Windows" description="Either a dialog or a window is open">
     <children xmi:id="_4mlg68PDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.contexts.window" contributorURI="platform:/plugin/org.eclipse.platform" name="In Windows" description="A window is open">
       <children xmi:id="_4mlg7MPDEe6OJqo-pvxGqg" elementId="org.eclipse.e4.ui.contexts.views" contributorURI="platform:/plugin/org.eclipse.platform" name="%bindingcontext.name.bindingView"/>
@@ -1440,6 +1447,8 @@
   <rootContext xmi:id="_4yFmmMPDEe6OJqo-pvxGqg" elementId="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" name="Auto::org.eclipse.wst.server.ui.internal.webbrowser.actionSet"/>
   <rootContext xmi:id="_4yFmmsPDEe6OJqo-pvxGqg" elementId="org.eclipse.wst.web.ui.wizardsActionSet" name="Auto::org.eclipse.wst.web.ui.wizardsActionSet"/>
   <rootContext xmi:id="_4yFmnMPDEe6OJqo-pvxGqg" elementId="org.eclipse.wst.ws.explorer.explorer" name="Auto::org.eclipse.wst.ws.explorer.explorer"/>
+  <rootContext xmi:id="_qdq7wAwMEe-ozukPuc_ddA" elementId="com.quantum.view.sql" name="Quantum UI Scope" description="Quantum UI Scope"/>
+  <rootContext xmi:id="_qkIJEAwMEe-ozukPuc_ddA" elementId="com.quantum.Quantum.actionSet" name="Auto::com.quantum.Quantum.actionSet"/>
   <descriptors xmi:id="_4oOfoMPDEe6OJqo-pvxGqg" elementId="org.eclipse.e4.ui.compatibility.editor" allowMultiple="true" category="org.eclipse.e4.primaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor">
     <tags>Editor</tags>
     <tags>removeOnHide</tags>
@@ -1992,6 +2001,48 @@
     <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.wst.xsl.ui"/>
     <tags>View</tags>
     <tags>categoryTag:XML</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkANQAwMEe-ozukPuc_ddA" elementId="com.quantum.view.logview" label="Quantum SQL Log" iconURI="platform:/plugin/com.quantum.Quantum/icons/log.gif" tooltip="" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.SQLLogView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.Quantum"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkANQQwMEe-ozukPuc_ddA" elementId="com.quantum.view.JDBCDriverView" label="JDBC Driver View" iconURI="platform:/plugin/com.quantum.Quantum/icons/driver.gif" tooltip="" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.driver.JDBCDriverView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.Quantum"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkBbYAwMEe-ozukPuc_ddA" elementId="com.quantum.view.tableview.TableView" label="Quantum Table View" iconURI="platform:/plugin/com.quantum.Quantum/icons/table.gif" tooltip="" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.tableview.TableView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.Quantum"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkCCcAwMEe-ozukPuc_ddA" elementId="com.quantum.view.bookmarkview" label="Database Bookmarks" iconURI="platform:/plugin/com.quantum.Quantum/icons/bookmarks.gif" tooltip="" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.bookmark.BookmarkView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.Quantum"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkCCcQwMEe-ozukPuc_ddA" elementId="com.quantum.view.sqlqueryview" label="Quantum SQL Queries View" iconURI="platform:/plugin/com.quantum.Quantum/icons/script.gif" tooltip="" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.SQLQueryView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.Quantum"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkCpgAwMEe-ozukPuc_ddA" elementId="com.quantum.view.sqlsearchresultstree" label="Quantum Search Results" iconURI="platform:/plugin/com.quantum.Quantum/icons/search_results_view.gif" tooltip="" allowMultiple="true" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.SQLSearchResultsTree"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.Quantum"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
+  </descriptors>
+  <descriptors xmi:id="_qkDQkAwMEe-ozukPuc_ddA" elementId="com.quantum.view.beanshellview" label="BeanShell Script View" iconURI="platform:/plugin/com.quantum.beanshell/icons/beanshell.gif" tooltip="" category="QuantumDB" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+    <persistedState key="originalCompatibilityViewClass" value="com.quantum.view.beanshell.BeanShellView"/>
+    <persistedState key="originalCompatibilityViewBundle" value="com.quantum.beanshell"/>
+    <tags>View</tags>
+    <tags>categoryTag:QuantumDB</tags>
   </descriptors>
   <trimContributions xmi:id="_2r10UF9tEeO-yojH_y4TJA" elementId="org.eclipse.ui.ide.application.trimcontribution.QuickAccess" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" toBeRendered="false" parentId="org.eclipse.ui.main.toolbar" positionInParent="last">
     <children xsi:type="menu:ToolControl" xmi:id="_76uUAF9tEeO-yojH_y4TJA" elementId="Spacer Glue" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.renderers.swt/org.eclipse.e4.ui.workbench.renderers.swt.LayoutModifierToolControl">
@@ -3275,6 +3326,13 @@
   <commands xmi:id="_4vZe_MPDEe6OJqo-pvxGqg" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
   <commands xmi:id="_4vZe_cPDEe6OJqo-pvxGqg" elementId="AUTOGEN:::org.eclipse.pde.ui.logViewActions/org.eclipse.jdt.debug.ui.LogViewActions.showStackTrace" commandName="Show Stack Trace in Console View" description="Show Stack Trace in Console View" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
   <commands xmi:id="_4vZe_sPDEe6OJqo-pvxGqg" elementId="AUTOGEN:::org.eclipse.ui.articles.action.contribution.view/org.eclipse.wst.wsi.ui.internal.actions.actionDelegates.ValidateWSIProfileActionDelegate" commandName="WS-I Profile Validator" description="Validate WS-I Message Log File" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
+  <commands xmi:id="_qdpGkAwMEe-ozukPuc_ddA" elementId="com.quantum.actions.CommentAction2" commandName="%command.comment.name" description="%command.comment.description" category="_qdofgAwMEe-ozukPuc_ddA"/>
+  <commands xmi:id="_qdpGkQwMEe-ozukPuc_ddA" elementId="com.quantum.actions.ExecuteAction" commandName="Execute SQL" description="Execute the SQL statements against a database bookmark" category="_qdofgAwMEe-ozukPuc_ddA"/>
+  <commands xmi:id="_qdptoAwMEe-ozukPuc_ddA" elementId="com.quantum.actions.FormatAction" commandName="%command.format.name" description="%command.format.description" category="_qdofgAwMEe-ozukPuc_ddA"/>
+  <commands xmi:id="_qjvHgAwMEe-ozukPuc_ddA" elementId="AUTOGEN:::quantum-plugin.editorContribution1/quantum-plugin.action1" commandName="quantum-plugin.action1" description="Toggle comments" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
+  <commands xmi:id="_qjvukAwMEe-ozukPuc_ddA" elementId="AUTOGEN:::quantum-plugin.editorContribution1/quantum-plugin.action3" commandName="quantum-plugin.action3" description="Check syntax of statements" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
+  <commands xmi:id="_qjvukQwMEe-ozukPuc_ddA" elementId="AUTOGEN:::quantum-plugin.editorContribution1/quantum-plugin.action2" commandName="quantum-plugin.action2" description="Format contents of editor" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
+  <commands xmi:id="_qjwVoAwMEe-ozukPuc_ddA" elementId="AUTOGEN:::com.quantum.view.bookmarkview.menu/com.quantum.action.importbookmarks" commandName="Export Bookmarks" description="Exports bookmarks to a file" category="_4mvR-cPDEe6OJqo-pvxGqg"/>
   <addons xmi:id="_4mlg7sPDEe6OJqo-pvxGqg" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_4mlg78PDEe6OJqo-pvxGqg" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_4mlg8MPDEe6OJqo-pvxGqg" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
@@ -3286,7 +3344,7 @@
   <addons xmi:id="_4mlg9sPDEe6OJqo-pvxGqg" elementId="MinMax Addon" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.minmax.MinMaxAddon"/>
   <addons xmi:id="_4mlg98PDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.workbench.addon.0" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.workbench/org.eclipse.e4.ui.internal.workbench.addons.HandlerProcessingAddon"/>
   <addons xmi:id="_4mlg-MPDEe6OJqo-pvxGqg" elementId="SplitterAddon" contributionURI="bundleclass://org.eclipse.e4.ui.workbench.addons.swt/org.eclipse.e4.ui.workbench.addons.splitteraddon.SplitterAddon"/>
-  <addons xmi:id="_IYS0IKimEeS11vbz3f9ezw" elementId="org.eclipse.ui.ide.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
+  <addons xmi:id="_qeO8cAwMEe-ozukPuc_ddA" elementId="org.eclipse.ui.ide.addon.0" contributionURI="bundleclass://org.eclipse.ui.ide/org.eclipse.ui.internal.ide.addons.SaveAllDirtyPartsAddon"/>
   <addons xmi:id="_dz0JgGOlEeSMMaPQU2nlzw" elementId="org.eclipse.ui.ide.application.addon.0" contributorURI="platform:/plugin/org.eclipse.ui.ide.application" contributionURI="bundleclass://org.eclipse.ui.ide.application/org.eclipse.ui.internal.ide.application.addons.ModelCleanupAddon"/>
   <categories xmi:id="_4mvR4MPDEe6OJqo-pvxGqg" elementId="org.eclipse.ui.category.edit" name="Edit"/>
   <categories xmi:id="_4mvR4cPDEe6OJqo-pvxGqg" elementId="org.eclipse.mylyn.wikitext.ui.editor.category" name="WikiText Markup Editing Commands" description="commands for editing lightweight markup"/>
@@ -3342,4 +3400,5 @@
   <categories xmi:id="_4mvSE8PDEe6OJqo-pvxGqg" elementId="org.eclipse.gef.category.view" name="View" description="View"/>
   <categories xmi:id="_4mvSFMPDEe6OJqo-pvxGqg" elementId="org.eclipse.jdt.ui.category.source" name="Source" description="Java Source Actions"/>
   <categories xmi:id="_4mvSFcPDEe6OJqo-pvxGqg" elementId="org.eclipse.pde.runtime.spy.commands.category" name="Spy"/>
+  <categories xmi:id="_qdofgAwMEe-ozukPuc_ddA" elementId="com.quantum.category" name="QuantumDB" description="Quantum Database Tools"/>
 </application:Application>
