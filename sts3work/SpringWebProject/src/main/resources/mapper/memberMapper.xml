@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="MemberDao">
+	<!-- 중복체크 -->
+	<select id="idCheckOfMember" resultType="int" parameterType="String">
+		select count(*) from smember where id=#{id}
+	</select>
+	
+	<!-- insert -->
+	<insert id="insertOfMember" parameterType="mdto">
+		insert into smember values(null, #{name},#{id},#{pass},#{hp},now())
+	</insert>
+	
+	<!-- 전체 출력 -->
+	<select id="getAllOfMember" resultType="mdto">
+		select * from smember order by num desc
+	</select>
+ </mapper>
