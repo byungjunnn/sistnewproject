@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hahmlet:wght@100..900&family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@100..900&family=Poor+Story&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<title>Insert title here</title>
+</head>
+<body>
+	<button type="button" class="btn btn-outline-info"
+	id="btn1">data3.xml읽기</button>
+	
+	<button type="button" class="btn btn-outline-success"
+	id="btn2">data3.json읽기</button>
+	
+	<button type="button" class="btn btn-outline-warning"
+	id="btn3">multidata3.json읽기</button>
+	<br><br>
+	<div id="result">결과</div>
+	
+	<script type="text/javascript">
+		$("#btn1").click(function() {
+			$.ajax({
+				type:"get",
+				url:"data3.xml",
+				dataType:"xml",
+				success:function(res){
+					var s="";
+					
+					//i는 0부터, ele는 각 태그값, 여기서는 stu각각이 ele로 넘어옴
+					$(res).find("stu").each(function(i,ele) {
+						var e=$(ele);
+						
+						s+="i: "+i+"<br>";
+						s+="이름: "+e.attr("name")+"<br>";
+						s+="java: "+e.find("java").text()+"<br>";
+						s+="spring: "+e.find("spring").text()+"<br>";
+						s+="ajax: "+e.find("ajax").text()+"<br>";
+						s+="-----------------------<br>";
+					});
+					
+					$("#result").html(s);
+				}
+			})
+		})
+		
+		$("#btn2").click(function() {
+			
+			var s="";
+			
+			$.ajax({
+				type:"get",
+				url:"data3.json",
+				dataType:"json",
+				success:function(res){
+					
+					$.each(res, function(i, ele) {
+						s+="idx: "+i+"<br>";
+						s+="name: "+ele.name+"<br>";
+						s+="city: "+ele.city+"<br>";
+						s+="hp: "+ele.hp+"<br>";
+						s+="detailaddr: "+(ele.detailaddr==null?"상제주소 없음":ele.detailaddr)+"<br>";
+					})
+					
+					$("#result").html(s);
+				}
+			})
+		})
+		
+		$("#btn3").click(function() {
+			
+			var s="";
+			
+			$.ajax({
+				type:"get",
+				url:"multidata3.json",
+				dataType:"json",
+				success:function(res){
+					
+					$.each(res, function(i,ele){
+						s+="idx: "+i+"<br>";
+						s+="name: "+ele.name+"<br>";
+						s+="hobby: ";
+						
+						if(ele.hobby==null){
+							s+="취미없음<br>";
+						}else{
+							$.each(ele.hobby, function(i,h){
+								s+="["+h+"]";
+							})
+							s+="<br>";
+						}
+					s+="핸드폰: "+(ele.hp==null?"번호없음":ele.hp)+"<br>";;
+					s+="주소: "+ele.addr+"<br>";
+					s+="===================<br>"
+					})
+					$("#result").html(s);
+				}
+			})
+		})
+	</script>
+</body>
+</html>

@@ -15,6 +15,7 @@
 	<insert id="insertOfMember" parameterType="cmdto">
 		insert into carmember(name,hp,addr,gaipday) values(#{name},#{hp},#{addr},#{gaipday})
 	</insert>
+<<<<<<< HEAD
 	
 	<!-- num에 대한 dto값 -->
 	<select id="selectOneOfCarMember" resultType="cmdto" parameterType="String">
@@ -30,4 +31,6 @@
 	<delete id="deleteOfCarMember" parameterType="String">
 		delete from carmember where num=#{num}
 	</delete>
+=======
+>>>>>>> 9378f6f28662beab38a929c3907021905de757d4
 </mapper>
