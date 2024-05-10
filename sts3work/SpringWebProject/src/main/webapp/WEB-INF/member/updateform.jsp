@@ -31,33 +31,27 @@
 					}
 				}
 			})
-		})
+		}) 
 	})
 </script>
 </head>
 <body>
 <div style="margin: 100px 100px; width: 450px;">
-	<form action="write" method="post">
+	<form action="update" method="post">
+	<input type="hidden" name="num" value="${dto.num }">
 		<table class="table table-bordered">
-			<caption align="top"><b>회원가입</b></caption>
+			<caption align="top"><b>회원정보 수정</b></caption>
 			<tr>
 				<th>회원명</th>
 				<td>
 					<input type="text" name="name" required="required"
-					style="width: 130px;" class="form-control">
+					style="width: 130px;" class="form-control" value="${dto.name }">
 				</td>
 			</tr>
 			
 			<tr>
 				<th>아이디</th>
-				<td>
-				<div class="d-inline-flex">
-					<input type="text" name="id" required="required"
-					style="width: 130px;" class="form-control" id="id">
-					<button type="button" class="btn btn-outline-danger btn-sm"
-					id="btncheck">중복체크</button>
-				</div>
-				</td>
+				<td><b>${dto.id }</b></td>
 			</tr>
 			
 			<tr>
@@ -72,13 +66,13 @@
 				<th>핸드폰</th>
 				<td>
 					<input type="text" name="hp" required="required"
-					style="width: 150px;" class="form-control">
+					style="width: 150px;" class="form-control" value="${dto.hp }">
 				</td>
 			</tr>
 			
 			<tr>
 				<td colspan="2" align="center">
-					<button type="submit" class="btn btn-outline-success">회원가입</button>
+					<button type="submit" class="btn btn-outline-warning">정보수정</button>
 					<button type="button" class="btn btn-outline-success"
 					onclick="location.href='list'">회원목록</button>
 				</td>

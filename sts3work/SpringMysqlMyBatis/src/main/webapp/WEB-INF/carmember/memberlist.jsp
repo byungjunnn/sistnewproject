@@ -14,13 +14,7 @@
 <body>
 <div style="margin: 50px 100px;width: 800px;">
 	<button type="button" class="btn btn-outline-info"
-<<<<<<< HEAD
-	onclick="location.href='writeform'">회원정보 입력</button>
-	<button type="button" class="btn btn-outline-info"
-	onclick="location.href='../samsung/list'">차목록</button><br><br>
-=======
 	onclick="location.href='writeform'">회원정보 입력</button><br><br>
->>>>>>> 9378f6f28662beab38a929c3907021905de757d4
 	
 	<c:if test="${totalCount==0 }">
 		<h5 class="alert alert-info">회원정보가 없습니다</h5>

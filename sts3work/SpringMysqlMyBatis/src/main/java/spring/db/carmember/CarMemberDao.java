@@ -27,7 +27,6 @@ public class CarMemberDao implements CarMemberDaoInter {
 		return session.selectOne("totalCountOfMember");
 	}
 
-<<<<<<< HEAD
 	@Override
 	public CarMemberDto getOneData(String num) {
 		return session.selectOne("selectOneOfCarMember", num);
@@ -43,6 +42,4 @@ public class CarMemberDao implements CarMemberDaoInter {
 		session.delete("deleteOfCarMember", num);
 	}
 
-=======
->>>>>>> 9378f6f28662beab38a929c3907021905de757d4
 }

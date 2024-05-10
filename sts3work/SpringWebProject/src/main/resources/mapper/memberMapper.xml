@@ -16,4 +16,24 @@
 	<select id="getAllOfMember" resultType="mdto">
 		select * from smember order by num desc
 	</select>
+	
+	<!-- num에 대한 dto값 -->
+	<select id="selectOneOfMember" resultType="mdto" parameterType="String">
+		select * from smember where num=#{num}
+	</select>
+	
+	<!-- 비밀번호 체크 num과 pass 2개를 넘겨야되서 HashMap사용-->
+	<select id="passCheckOfMember" parameterType="HashMap" resultType="int">
+		select count(*) from smember where num=#{num} and pass=#{pass}
+	</select>
+	
+	<!-- update -->
+	<update id="updateOfMember" parameterType="mdto">
+		update smember set name=#{name},hp=#{hp} where num=#{num}
+	</update>
+	
+	<!-- delete -->
+	<delete id="deleteOfMember" parameterType="String">
+		delete from smember where num=#{num}
+	</delete>
  </mapper>

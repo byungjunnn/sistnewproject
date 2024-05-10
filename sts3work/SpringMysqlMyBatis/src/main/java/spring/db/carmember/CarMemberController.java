@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestParam;
-=======
->>>>>>> 9378f6f28662beab38a929c3907021905de757d4
 
 import spring.db.may.SpringCarDto;
 
@@ -49,7 +46,6 @@ public class CarMemberController {
 		memberInter.insertMember(dto);
 		return "redirect:list";
 	}
-<<<<<<< HEAD
 	
 	@GetMapping("/updateform")
 	public String uform(@RequestParam String num, Model model) {
@@ -72,6 +68,4 @@ public class CarMemberController {
 		memberInter.deleteMember(num);
 		return "redirect:list";
 	}
-=======
->>>>>>> 9378f6f28662beab38a929c3907021905de757d4
 }

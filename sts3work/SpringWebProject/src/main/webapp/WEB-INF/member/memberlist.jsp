@@ -12,7 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
-	<div style="margin: 50px 100px;width: 800px;">
+<div style="margin: 50px 100px;width: 800px;">
 	<button type="button" class="btn btn-outline-dark"
 		onclick="location.href='writeform'">회원가입</button>
 	<br><br>
