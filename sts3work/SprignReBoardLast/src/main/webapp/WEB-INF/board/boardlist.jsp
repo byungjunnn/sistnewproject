@@ -57,6 +57,11 @@
 						<c:if test="${dto.photo!='no' }">
 							<i class="bi bi-image"></i>
 						</c:if>
+						
+						<!-- 댓글갯수 표시 -->
+						<c:if test="${dto.acount>0 }">
+							<a style="color: red;" href="content?num=${dto.num }&currentPage=${currentPage}#answer">[${dto.acount }]</a>
+						</c:if>
 					</td>
 					<td align="center">${dto.writer }</td>
 					<td align="center">

@@ -37,4 +37,23 @@
 	<select id="getDataOfBoard" parameterType="int" resultType="bdto">
 		select * from reboard where num=#{num}
 	</select>
+	
+	<!-- pass 확인 -->
+	<select id="CheckEqualPassOfBoard" parameterType="HashMap" resultType="int">
+		select count(*) from reboard where num=#{num} and pass=#{pass}
+	</select>
+	
+	<!-- update -->
+	<update id="UpdateOfBoard" parameterType="bdto">
+		update reboard set writer=#{writer},subject=#{subject},content=#{content}
+		<if test="photo!='no'">
+			,photo=#{photo}
+		</if>
+		where num=#{num}
+	</update>
+	
+	<!-- delete -->
+	<delete id="DeleteOfBoard" parameterType="int">
+		delete from reboard where num=#{num}
+	</delete>
  </mapper>
