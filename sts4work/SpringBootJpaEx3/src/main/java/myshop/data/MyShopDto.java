@@ -1,6 +1,6 @@
 package myshop.data;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -34,5 +34,6 @@ public class MyShopDto {
 	private String sangipgo;
 	
 	@CreationTimestamp //엔티티 생성 시점의 시간 자동등록
+	@Column(updatable = false) //수정시 이 컬럼은 수정하지 않겠다는 뜻
 	private Timestamp writeday;
 }
