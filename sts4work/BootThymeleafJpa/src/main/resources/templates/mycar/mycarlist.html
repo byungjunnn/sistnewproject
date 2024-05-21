@@ -38,12 +38,17 @@
 		<tr th:each="dto,iter:${list}">
 			<td align="center">[[${iter.count}]]</td>
 			<td>
-				<a>
+				<a th:href="@{/detail(num=${dto.num})}">
 					<img th:src="@{|/save/${dto.carphoto}|}" style="width: 50px">
 					[[${dto.carname}]]
+					
+					<!-- 댓글갯수추가 -->
+					<span style="margin-left: 10px; color: red;" th:if="">
+						([[${dto.commentcount}]])
+					</span>
 				</a>
 			</td>
-			<td align="center">
+			<td align="center">.'uy
 				<div class="box" th:style="'background-color:'+${dto.carcolor}">
 					 
 				</div>
