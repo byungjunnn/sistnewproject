@@ -13,4 +13,11 @@
 		select * from guest order by num desc
 	</select>
 	
+	<select id="CheckPass" parameterType="Map" resultType="int">
+		select count(*) from guest where num=#{num} and pass=#{pass}
+	</select>
+	
+	<delete id="deleteGuest" parameterType="int">
+		delete from guest where num=#{num}
+	</delete>
 </mapper>

@@ -32,7 +32,7 @@
 			}
 			
 			//데이터 전송
-			var s=$("#frm").serialize(); //name으로 한번에 전송
+			var s=$("#frm").serialize(); //name으로 한번에 전송(dto와 같아야함)
 			
 			//insert ajax
 			$.ajax({
@@ -71,11 +71,10 @@
 				contentType:false, //enctype이 원래 기본설정이 application/x.www 이거인데 multipart/form-data로 변경하는 것이 false
 				type:"post",
 				dataType:"json",
-				data:fdata,
+				data:fdata,  
 				success:function(res){
 					console.log("파일명들 확인: "+res.photoname);
 				}
-				
 			})
 		})
 	})
@@ -144,7 +143,29 @@
 					<button type="button" class="btn btn-light btn-sm"
 					onclick="location.href=''">수정</button>
 					<button type="button" class="btn btn-light btn-sm"
-					onclick="location.href=''">삭제</button>
+					onclick="del(${a.num})">삭제</button>
+					
+					<script type="text/javascript">
+						function del(num){
+							//alert(num);
+							let pass=prompt("비밀번호를 입력해주세요");
+							$.ajax({
+								type:"get",
+								dataType:"json",
+								url:"delete",
+								data:{"num":num,"pass":pass},
+								success:function(res){
+									if(res.status==1){
+										alert("삭제되었습니다");
+										location.reload();
+									}else{
+										alert("비밀번호가 맞지 않습니다");
+									}
+								}
+							})
+							ㅗ 
+						}
+					</script>
 				</td>
 			</tr>
 		</table>

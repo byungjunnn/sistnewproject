@@ -31,7 +31,4 @@ public class GuestListController {
 		
 		return "guest/guestlist";
 	}
-	
-	
-	
 }

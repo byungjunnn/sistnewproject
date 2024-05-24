@@ -12,4 +12,6 @@ public interface GuestMapper {
 	public int getTotalCount();
 	public void insertGuest(GuestDto dto);
 	public List<GuestDto> getAllDatas();
+	public int CheckPass(int num, String pass);
+	public void deleteGuest(int num);
 }
