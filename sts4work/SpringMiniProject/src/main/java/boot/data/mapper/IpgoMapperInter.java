@@ -12,4 +12,7 @@ public interface IpgoMapperInter {
 	public int getTotalCount(); //메서드명이 sql의 id가 됨
 	public void insertIpgo(ipgoDto dto);
 	public List<ipgoDto> getAllDatas();
+	public ipgoDto getData(String num);
+	public void updateIpgo(ipgoDto dto);
+	public void deleteIpgo(String num);
 }

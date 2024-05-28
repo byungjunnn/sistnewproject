@@ -35,7 +35,7 @@
 				</c:if>
 				
 				<c:if test="${dto.photoname=='no' }">
-						<a href="../ipgoimage/${pn }">
+						<a href="../ipgoimage/noimg.png">
 							<img src="../image/noimg.png" style="width: 150px;">
 						</a>
 				</c:if>
@@ -60,9 +60,9 @@
 		<tr>
 			<td>
 				<button type="button" class="btn btn-outline-warning"
-				onclick="location.href='updateform=num=${dto.num}'">수정</button>
+				onclick="location.href='updateform?num=${dto.num}'">수정</button>
 				<button type="button" class="btn btn-outline-danger"
-				onclick="location.href='delete=num=${dto.num}'">삭제</button>
+				onclick="location.href='delete?num=${dto.num}'">삭제</button>
 			</td>
 		</tr>
 	</c:forEach>
