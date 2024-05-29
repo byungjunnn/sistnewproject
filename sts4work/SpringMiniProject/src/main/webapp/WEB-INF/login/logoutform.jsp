@@ -12,7 +12,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <title>Insert title here</title>
 </head>
+<c:set var="root" value="<%=request.getContextPath() %>"/>
 <body>
-
+<div style="margin: 100px 200px;">
+	<img src="${root }/image/02.png" width="300" align="left" hspace="20">
+	<br><br>
+	<b>${name }님 로그인 중</b><br><br><br>
+	<button type="button" class="btn btn-danger"
+	style="width: 100px;" onclick="location.href='logoutprocess'">로그아웃</button>
+</div>
 </body>
 </html>

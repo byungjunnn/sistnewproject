@@ -13,7 +13,15 @@
 		select count(*) from minimember where id=#{id}
 	</select>
 	
-	<select id="getData" resultType="MemberDto">
-		select * from minimember where num=#{num}
+	<select id="getName" parameterType="String" resultType="String">
+		select name from minimember where id=#{id}
+	</select>
+	
+	<select id="loginIdPassCheck" parameterType="Map" resultType="int">
+		select count(*) from minimember where id=#{id} and pass=#{pass}
+	</select>
+	
+	<select id="getDataById" parameterType="String" resultType="MemberDto">
+		select * from minimember where id=#{id}
 	</select>
 </mapper>

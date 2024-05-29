@@ -12,20 +12,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 <title>Insert title here</title>
 </head>
-<c:set var="root" value="<%=request.getContextPath() %>"/>
 <body>
-	<i class="bi bi-envelope-arrow-down-fill"></i> &nbsp;leebj4690@gmail.com<br>
-	<i class="bi bi-headset"></i> &nbsp;02-1684-1634<br>
-	<i class="bi bi-house-add-fill"></i> &nbsp;서울시 강남구 역삼동<br><br>
-	
-	<!-- 로그아웃 상태에서는 기본이미지 / 로그인 상태는 본인 이미지 -->
-	<c:if test="${sessionScope.loginok==null }">
-		<img src="${root }/image/03.png" style="width: 80px; border-radius: 100px;">
-	</c:if>
-	
-	<c:if test="${sessionScope.loginok!=null }">
-		<img src="${root }/memberphoto/${sessionScope.loginphoto }"
-		style="width: 80px; border-radius: 100px;">
-	</c:if>
+<script type="text/javascript">
+	alert("로그인 실패");
+	history.back();
+</script>
 </body>
 </html>

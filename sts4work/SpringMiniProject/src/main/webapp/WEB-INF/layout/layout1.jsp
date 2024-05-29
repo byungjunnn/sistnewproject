@@ -35,7 +35,7 @@
 		position: absolute;
 		top: 300px;
 		left: 30px;
-		height: 250px;
+		height: 400px;
 		width: 250px;
 		border: 5px solid purple;
 		border-radius: 30px;
