@@ -16,4 +16,9 @@ public interface MemberMapperInter {
 	public String getName(String id);
 	public int loginIdPassCheck(Map<String, String> map);
 	public MemberDto getDataById(String id);
+	public void deleteMember(String num);
+	
+	public MemberDto getDataByNum(String num);
+	public void updatePhoto(Map<String, String> map);
+	public void updateMember(MemberDto dto);
 }
