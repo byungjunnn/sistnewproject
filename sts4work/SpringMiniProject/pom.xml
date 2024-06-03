@@ -88,6 +88,7 @@
          <artifactId>jakarta.servlet.jsp.jstl</artifactId>
          <version>3.0.1</version>
       </dependency>-->
+      
 		<!--boot 2점대에서는 이거로 추가함-->
 		<dependency>
 			<groupId>javax.servlet</groupId>
