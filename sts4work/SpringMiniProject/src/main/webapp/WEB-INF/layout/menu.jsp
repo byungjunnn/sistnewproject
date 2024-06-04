@@ -17,7 +17,7 @@
 	}
 	
 	ul.menu li{
-		width: 130px;
+		width: 150px;
 		float: left;
 		border: 1px solid gray;
 		height: 60px;
@@ -43,7 +43,7 @@
 			<a href="${root }/">Home</a>
 		</li>
 		<li>
-			<a href="${root }/ipgo/writeform">상품등록</a>
+			<a href="${root }/reboard/list">답변형게시판</a>
 		</li>
 		<li>
 			<a href="${root }/ipgo/list">상품목록</a>
