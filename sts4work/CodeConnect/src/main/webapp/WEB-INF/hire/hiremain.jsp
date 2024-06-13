@@ -202,7 +202,7 @@ ul {
    justify-content: space-between;
 }
 
-.job-select, .tech-select {
+.job-select, .tech-select, .region-select {
    max-height: 350px; /* 스크롤바가 나타날 최대 높이 */
    overflow-y: auto; /* 세로 스크롤바 활성화 */
 }
@@ -323,8 +323,8 @@ ul {
 
 /* 지역 */
 .region {
-   position: absolute;
-   width: 300px;
+	position: absolute;
+	width: 350px;
     height: 500px;
     border: 1px solid lightgray;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -338,11 +338,11 @@ ul {
 
 .regionbox {
    position: relative;
-   width: 130px;
+   width: 160px;
 }
 
 .regionbox-option {
-   width: 130px;
+   width: 160px;
    z-index: 1;
    list-style-type: none;
    padding: 0;
@@ -364,7 +364,7 @@ ul {
 
 .region-btn:hover {
    background-color: #EDEDED;
-   width: 100px;
+   width: 130px;
    border-radius: 10px;
    margin-top: 5px;
    margin-left: 2px;
@@ -373,7 +373,7 @@ ul {
 }
 
 .region-detail{
-   width: 158px;
+   width: 175px;
    z-index: 1;
    list-style-type: none;
    padding: 0;
@@ -894,7 +894,7 @@ svg {
          <div class="region">
             <div class="regiontop d-inline-flex">
                <section class="regionbox">
-                      <ul class="regionbox-option">
+				 <ul class="regionbox-option">
                      <li><button type="button" class="region-btn" value="all">전국</button></li>
                      <li><button type="button" class="region-btn" value="seoul">서울</button></li>
                      <li><button type="button" class="region-btn" value="gyeonggi">경기</button></li>
@@ -918,9 +918,9 @@ svg {
                </section>
                <div class="region-detail">
                   <div class="region-detail-empty" style="color: rgb(153, 153, 153);font-size: 0.8em;
-                  width: 150px;padding: 130px 0 0 25px">지역을 선택해주세요.</div>
-                      <ul class="seoul">
-                     <li><input type="checkbox" class="seoul-chk">서울 전체</li>
+                  width: 150px;padding: 130px 0 0 35px">지역을 선택해주세요.</div>
+                     <ul class="seoul">
+                     <li><input type="checkbox" class="seoul-chk">전체</li>
                      <li><input type="checkbox" class="seoul-chk">강남구</li>
                      <li><input type="checkbox" class="seoul-chk">강동구</li>
                      <li><input type="checkbox" class="seoul-chk">강북구</li>
@@ -948,7 +948,7 @@ svg {
                      <li><input type="checkbox" class="seoul-chk">중랑구</li>
                      </ul>
                      <ul class="gyeonggi">
-                     <li><input type="checkbox" class="gyeonggi-chk">경기 전체</li>
+                     <li><input type="checkbox" class="gyeonggi-chk">전체</li>
                      <li><input type="checkbox" class="gyeonggi-chk">가평군</li>
                      <li><input type="checkbox" class="gyeonggi-chk">고양시</li>
                      <li><input type="checkbox" class="gyeonggi-chk">과천시</li>
@@ -982,7 +982,7 @@ svg {
                      <li><input type="checkbox" class="gyeonggi-chk">화성시</li>
                      </ul>
                      <ul class="incheon">
-                     <li><input type="checkbox" class="incheon-chk">인천 전체</li>
+                     <li><input type="checkbox" class="incheon-chk">전체</li>
                      <li><input type="checkbox" class="incheon-chk">강화군</li>
                      <li><input type="checkbox" class="incheon-chk">계양구</li>
                      <li><input type="checkbox" class="incheon-chk">남동구</li>
@@ -995,7 +995,7 @@ svg {
                      <li><input type="checkbox" class="incheon-chk">중구</li>
                      </ul>
                      <ul class="busan">
-                     <li><input type="checkbox" class="busan-chk">부산 전체</li>
+                     <li><input type="checkbox" class="busan-chk">전체</li>
                      <li><input type="checkbox" class="busan-chk">강서구</li>
                      <li><input type="checkbox" class="busan-chk">금정구</li>
                      <li><input type="checkbox" class="busan-chk">기장군</li>
@@ -1014,7 +1014,7 @@ svg {
                      <li><input type="checkbox" class="busan-chk">해운대구</li>
                      </ul>
                      <ul class="daegu">
-                     <li><input type="checkbox" class="daegu-chk">대구 전체</li>
+                     <li><input type="checkbox" class="daegu-chk">전체</li>
                      <li><input type="checkbox" class="daegu-chk">군위군</li>
                      <li><input type="checkbox" class="daegu-chk">남구</li>
                      <li><input type="checkbox" class="daegu-chk">달서구</li>
@@ -1026,7 +1026,7 @@ svg {
                      <li><input type="checkbox" class="daegu-chk">중구</li>
                      </ul>
                      <ul class="gwangju">
-                     <li><input type="checkbox" class="gwangju-chk">광주 전체</li>
+                     <li><input type="checkbox" class="gwangju-chk">전체</li>
                      <li><input type="checkbox" class="gwangju-chk">광산구</li>
                      <li><input type="checkbox" class="gwangju-chk">남구</li>
                      <li><input type="checkbox" class="gwangju-chk">동구</li>
@@ -1034,7 +1034,7 @@ svg {
                      <li><input type="checkbox" class="gwangju-chk">서구</li>
                      </ul>
                      <ul class="daejeon">
-                     <li><input type="checkbox" class="daejeon-chk">대전 전체</li>
+                     <li><input type="checkbox" class="daejeon-chk">전체</li>
                      <li><input type="checkbox" class="daejeon-chk">대덕구</li>
                      <li><input type="checkbox" class="daejeon-chk">동구</li>
                      <li><input type="checkbox" class="daejeon-chk">서구</li>
@@ -1042,7 +1042,7 @@ svg {
                      <li><input type="checkbox" class="daejeon-chk">중구</li>
                      </ul>
                      <ul class="ulsan">
-                     <li><input type="checkbox" class="ulsan-chk">울산 전체</li>
+                     <li><input type="checkbox" class="ulsan-chk">전체</li>
                      <li><input type="checkbox" class="ulsan-chk">남구</li>
                      <li><input type="checkbox" class="ulsan-chk">동구</li>
                      <li><input type="checkbox" class="ulsan-chk">북구</li>
@@ -1050,7 +1050,7 @@ svg {
                      <li><input type="checkbox" class="ulsan-chk">중구</li>
                      </ul>
                      <ul class="sejong">
-                     <li><input type="checkbox" class="sejong-chk">세종 전체</li>
+                     <li><input type="checkbox" class="sejong-chk">전체</li>
                      <li><input type="checkbox" class="sejong-chk">가람동</li>
                      <li><input type="checkbox" class="sejong-chk">고운동</li>
                      <li><input type="checkbox" class="sejong-chk">금남면</li>
@@ -1085,7 +1085,7 @@ svg {
                      <li><input type="checkbox" class="sejong-chk">해밀동</li>
                      </ul>
                      <ul class="gangwon">
-                     <li><input type="checkbox" class="gangwon-chk">강원 전체</li>
+                     <li><input type="checkbox" class="gangwon-chk">전체</li>
                      <li><input type="checkbox" class="gangwon-chk">강릉시</li>
                      <li><input type="checkbox" class="gangwon-chk">고성군</li>
                      <li><input type="checkbox" class="gangwon-chk">동해시</li>
@@ -1105,7 +1105,7 @@ svg {
                      <li><input type="checkbox" class="gangwon-chk">횡성군</li>
                      </ul>
                      <ul class="chungbuk">
-                     <li><input type="checkbox" class="chungbuk-chk">충북 전체</li>
+                     <li><input type="checkbox" class="chungbuk-chk">전체</li>
                      <li><input type="checkbox" class="chungbuk-chk">괴산군</li>
                      <li><input type="checkbox" class="chungbuk-chk">단양군</li>
                      <li><input type="checkbox" class="chungbuk-chk">보은군</li>
@@ -1119,7 +1119,7 @@ svg {
                      <li><input type="checkbox" class="chungbuk-chk">충주시</li>
                      </ul>
                      <ul class="chungnam">
-                     <li><input type="checkbox" class="chungnam-chk">충남 전체</li>
+                     <li><input type="checkbox" class="chungnam-chk">전체</li>
                      <li><input type="checkbox" class="chungnam-chk">계롱시</li>
                      <li><input type="checkbox" class="chungnam-chk">공주시</li>
                      <li><input type="checkbox" class="chungnam-chk">금산군</li>
@@ -1137,7 +1137,7 @@ svg {
                      <li><input type="checkbox" class="chungnam-chk">홍성군</li>
                      </ul>
                      <ul class="jeonbuk">
-                     <li><input type="checkbox" class="jeonbuk-chk">전북 전체</li>
+                     <li><input type="checkbox" class="jeonbuk-chk">전체</li>
                      <li><input type="checkbox" class="jeonbuk-chk">고창군</li>
                      <li><input type="checkbox" class="jeonbuk-chk">군산시</li>
                      <li><input type="checkbox" class="jeonbuk-chk">김제시</li>
@@ -1154,7 +1154,7 @@ svg {
                      <li><input type="checkbox" class="chungnam-chk">진안군</li>
                      </ul>
                      <ul class="jeonnam">
-                     <li><input type="checkbox" class="jeonnam-chk">전남 전체</li>
+                     <li><input type="checkbox" class="jeonnam-chk">전체</li>
                      <li><input type="checkbox" class="jeonnam-chk">강진군</li>
                      <li><input type="checkbox" class="jeonnam-chk">고흥군</li>
                      <li><input type="checkbox" class="jeonnam-chk">곡성군</li>
@@ -1179,7 +1179,7 @@ svg {
                      <li><input type="checkbox" class="jeonnam-chk">화순군</li>
                      </ul>
                      <ul class="gyeongbuk">
-                     <li><input type="checkbox" class="gyeongbuk-chk">경북 전체</li>
+                     <li><input type="checkbox" class="gyeongbuk-chk">전체</li>
                      <li><input type="checkbox" class="gyeongbuk-chk">경산시</li>
                      <li><input type="checkbox" class="gyeongbuk-chk">경주시</li>
                      <li><input type="checkbox" class="gyeongbuk-chk">고령군</li>
@@ -1205,7 +1205,7 @@ svg {
                      <li><input type="checkbox" class="gyeongbuk-chk">포항시</li>
                      </ul>
                      <ul class="gyeongnam">
-                     <li><input type="checkbox" class="gyeongnam-chk">경남 전체</li>
+                     <li><input type="checkbox" class="gyeongnam-chk">전체</li>
                      <li><input type="checkbox" class="gyeongnam-chk">거제시</li>
                      <li><input type="checkbox" class="gyeongnam-chk">거창군</li>
                      <li><input type="checkbox" class="gyeongnam-chk">고성군</li>
@@ -1226,15 +1226,18 @@ svg {
                      <li><input type="checkbox" class="gyeongnam-chk">합천군</li>
                      </ul>
                      <ul class="jeju">
-                     <li><input type="checkbox" class="jeju-chk">제주 전체</li>
+                     <li><input type="checkbox" class="jeju-chk">전체</li>
                      <li><input type="checkbox" class="jeju-chk">서귀포시</li>
                      <li><input type="checkbox" class="jeju-chk">제주시</li>
                      </ul>
                   </div>
                </div>
-            <div style="border: 1px solid lightgray; margin: 0 -10px 0 -10px;padding: 12.5px 0 0 30px;
-            border-width: 1px 0 0; height: 115px; background-color: #f6f6f6">
-            </div>
+               
+            <div class="region-select">
+	            <div id="selected-region" style="border: 1px solid lightgray; margin: 0 0px 0 0px;padding: 7px 0 0 7px;
+	            border-width: 1px 0 0; height: 115px; background-color: #f6f6f6;font-size: 8pt;width: 100%">
+	            </div>
+			</div>
             <div style="border: 1px solid lightgray; margin: 0px -10px 0 -10px;padding: 12.5px 0 0 10px;
             border-width: 1px 0 0;">
                <button type="button" class="btn btn-outline-light btnreset"
@@ -1784,26 +1787,63 @@ $('input[name="career"]').change(function() {
 /* 지역 버튼 이벤트 */
 $(".region").hide();
 
-$(".regionbtn").click(function(){
-   $(".region").toggle();
-   $('.region-detail ul').hide();
-   $(".regionbox-option").find("button[value='all']").addClass("selected").css("color","blue").css("font-weight","bold");
-})
+var isAllSelected = true;
+
+$(".regionbtn").click(function() {
+    $(".region").toggle();
+    $('.region-detail ul').hide();
+    
+    // 이전에 추가된 "전국" div가 있다면 삭제
+    $('#selected-region').find('.selected-region:contains("전국")').remove();
+    addSelectedregion('전국');
+    
+    /* 지역버튼 클릭시 전국이 클릭되어있도록 */
+    if (isAllSelected) {
+        $(".regionbox-option").find("button[value='all']").addClass("selected").css("color", "blue").css("font-weight", "bold");
+    }else{
+    	$(".regionbox-option button").find("button[value='all']").removeClass("selected").css("color", "black").css("font-weight", "0");
+    	$('#selected-region').find('.selected-region:contains("전국")').remove();
+    }
+});
+
+$(".regionbox-option button").click(function() {
+    var value = $(this).val();
+    var text = $(this).text();
+
+    // 이미 선택된 지역이 있는지 확인
+    var alreadySelected = $('#selected-region').find('.selected-region').filter(function() {
+        return $(this).text().includes(text);
+    }).length > 0;
+
+    if (value === 'all') {
+        isAllSelected = true;
+        if (!alreadySelected) {
+        	$('.selected-region').remove();
+            addSelectedregion('전국');
+        }
+    } else {
+        isAllSelected = false;
+        if (!alreadySelected) {
+            addSelectedregion(text + ' 전체');
+        }
+    }
+});
 
 $('.region-btn').on('click', function(){
     var region = $(this).val();
     $('.region-detail-empty').hide();
     $('.region-detail ul').hide();
     $('.' + region).show();
-    $('.' + region + ' li:first input[type="checkbox"]').prop("checked", true);
+    $('.' + region + ' li:first input[type="checkbox"]').attr("checked", true);
 });
 
 $('.region-btn').click(function() {
-    const regionText = $(this).text();
-    addSelectedregion(regionText);
+    regionText = $(this).text();
     if(regionText !== "전국") {
         // 전국 버튼에서 selected 클래스를 제거하고 스타일을 원래대로 되돌립니다.
         $(".regionbox-option").find("button[value='all']").removeClass("selected").css("color", "").css("font-weight", "");
+     	// 선택된 지역을 삭제
+        $('#selected-region').find('.selected-region:contains("전국")').remove();
     }else{
        $(this).addClass("selected").css("color","blue").css("font-weight","bold");
        $(".regionbox-option").find("button").not("[value='all']").removeClass("selected").css("color", "").css("font-weight", "");
@@ -1812,11 +1852,90 @@ $('.region-btn').click(function() {
     $(this).css("color","blue").css("font-weight","bold");
 });
 
-function addSelectedregion(regionText) {
+//'전체' 체크박스 클릭 이벤트
+$('li:contains("전체") input[type="checkbox"]').click(function() {
+    const $ul = $(this).closest('ul');
+    const isAllChecked = $(this).prop("checked");
+    const regionTextss = regionText + " " + $(this).closest('li').text().trim();
+
+    if (isAllChecked) {
+        // '전체' 체크박스를 선택한 경우
+        // 같은 ul 내의 다른 체크박스를 해제
+        $ul.find('li input[type="checkbox"]').not(this).prop("checked", false);
+        // 다른 선택된 지역을 제거
+        $ul.find('li').not(':contains("전체")').each(function() {
+            const otherRegionTextss = regionText + " " + $(this).text().trim();
+            $('#selected-region').find('.selected-region:contains("' + otherRegionTextss + '")').remove();
+        });
+        // '전체'를 추가
+        if (!$('#selected-region').find('.selected-region:contains("' + regionTextss + '")').length) {
+            addSelectedregion(regionTextss);
+        }
+    } else {
+        // '전체' 체크박스를 해제한 경우
+        $('#selected-region').find('.selected-region:contains("' + regionTextss + '")').remove();
+    }
+});
+
+// 다른 체크박스 클릭 이벤트
+$('li').not(':contains("전체")').find('input[type="checkbox"]').click(function() {
+    const $ul = $(this).closest('ul');
+    const regionTextss = regionText + " " + $(this).closest('li').text().trim();
+
+    if ($(this).prop("checked")) {
+        // 같은 ul 내의 '전체' 체크박스를 해제
+        $ul.find('li:contains("전체") input[type="checkbox"]').prop("checked", false);
+        // '전체' 체크박스 관련 선택된 지역을 제거
+        $('#selected-region').find('.selected-region:contains("' + regionText + ' 전체")').remove();
+        // 현재 선택된 지역을 추가
+        if (!$('#selected-region').find('.selected-region:contains("' + regionTextss + '")').length) {
+            addSelectedregion(regionTextss);
+        }
+        // 로컬 스토리지에서 제거
+        localStorage.setItem(regionText + '-allChecked', 'false');
+    } else {
+        // 체크박스를 해제한 경우
+        $('#selected-region').find('.selected-region:contains("' + regionTextss + '")').remove();
+    }
+});
+
+// 초기화 버튼 이벤트
+$(".btnreset").click(function() {
+        // .regionbox-option 버튼 초기화
+        $(".regionbox-option button").removeClass("selected").css({
+            color: "",
+            "font-weight": ""
+        });
+
+        $('.region-btn').on('click', function(){
+            var region = $(this).val();
+            $('.' + region + ' li:first input[type="checkbox"]').attr("checked", true);
+        });
+        
+        // 선택된 지역 삭제
+        $('#selected-region').empty();
+
+        // 모든 지역 숨기기
+        $('.region-detail ul').hide();
+        $('.region-detail-empty').hide();
+        
+
+        // '전국' 버튼 초기화
+        isAllSelected = true;
+        $(".regionbox-option button[value='all']").addClass("selected").css({
+            color: "blue",
+            "font-weight": "bold"
+        });
+		
+        // '전국' 추가
+        addSelectedregion('전국');
+    });
+
+function addSelectedregion(regionTextss) {
     const regionElement = $('<div>').addClass('selected-region').css({
         display: 'inline-block',
-        marginLeft: '6px',
-        marginRight: '10px',
+        marginLeft: '5px',
+        marginRight: '5px',
         marginBottom: '5px',
         border: '1px solid #ccc',
         backgroundColor: '#fafafa',
@@ -1826,9 +1945,9 @@ function addSelectedregion(regionText) {
         paddingLeft: '8px'
     });
 
-    const regionTextElement = $('<span>').text(regionText);
+    const regionTextElement = $('<span>').text(regionTextss);
     const removeButton = $('<button>').html('<i class="bi bi-x-lg"></i>').css({
-        marginLeft: '10px',
+        marginLeft: '0px',
         border: 'none',
         background: 'none',
         color: 'blue',
@@ -1837,8 +1956,8 @@ function addSelectedregion(regionText) {
 
     removeButton.on('click', function() {
        regionElement.remove();
-        $('.region-btn').each(function() {
-            if ($(this).text() === regionText) {
+        $('li input[type="checkbox"]').each(function() {
+            if ($(this).closest('li').text().trim() === regionTextss) {
                 $(this).prop('disabled', false);
             }
         });
@@ -1848,16 +1967,20 @@ function addSelectedregion(regionText) {
     $('#selected-region').append(regionElement);
 }
 
-$(document).click(function(event) {
-    // .career 및 .carreerbtn를 제외한 영역 클릭 시 .career 숨기기
-    if (!$(event.target).closest('.career, .carreerbtn').length) {
-        $('.career').hide();
-    }
-    if (!$(event.target).closest('.region, .regionbtn').length) {
-        $('.region').hide();
-    }
-});
+$(document).ready(function() {
+    // 기존 코드 유지
 
+    $(document).click(function(event) {
+        // .career 및 .careerbtn를 제외한 영역 클릭 시 .career 숨기기
+        if (!$(event.target).closest('.career, .carreerbtn').length) {
+            $('.career').hide();
+        }
+        // .region 및 .regionbtn를 제외한 영역 클릭 시 .region 숨기기
+        if (!$(event.target).closest('.region, .regionbtn, .selected-region').length) {
+            $('.region').hide();
+        }
+    });
+});
 </script>
 
    <script type="text/javascript">
