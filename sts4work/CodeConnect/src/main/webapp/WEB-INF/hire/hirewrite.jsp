@@ -6,17 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link
-   href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Noto+Sans+Korean&family=IBM+Plex+Sans+KR&display=swap"
-   rel="stylesheet">
-<link
-   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-   rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Noto+Sans+Korean&family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-<link rel="stylesheet"
-   href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-<script
-   src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <title>Insert title here</title>
 <style type="text/css">
 /* 중복 */
@@ -33,7 +27,7 @@
 }
 
 #wrap {
-   margin-top: 100px;
+/*    margin-top: 100px; */
    font-family: IBM Plex Sans KR;
 }
 
@@ -88,6 +82,7 @@ p.info {
    font-weight: 400;
    font-size: 10pt;
 }
+
 
 /* 컨텐츠 시작 */
 /* 직무 */
@@ -366,11 +361,6 @@ span.connect {
     font-weight: bold;
 }
 
-pre{
-   font-family: IBM Plex Sans KR;
-   overflow-x: hidden;
-}
-
 /* 기술스택 툴 */
 .techselect-wrapper{
    position: relative;
@@ -466,6 +456,83 @@ span.salary {
    font-weight: bold;
 }
 
+/* 기술스택 툴 */
+.cateselect-wrapper{
+   position: relative;
+   width: 266px;
+   font-family: IBM Plex Sans KR;
+   margin-right: 10px;
+}
+
+.cateselectbox{
+   position: relative;
+}
+
+.catetoggle-btn{
+   width: 100%;
+   padding: 10px;
+   border: 1px solid #ccc;
+   background-color: #fff;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-radius: 10px;
+}
+
+.catetoggle-btn span{
+   pointer-events: none;
+   font-weight: bold;
+   color: #696969;
+   font-family: IBM Plex Sans KR;
+}
+
+.catetoggle-btn span.selected{
+   color: black; /* 선택된 경우 검정색 */
+}
+
+.cateselectbox-option{
+   position: absolute;
+   top: 100%;
+   left: 0;
+   width: 100%;
+   border: 1px solid #ccc;
+   background-color: #fff;
+   /*        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+   margin-top: 5px;
+   z-index: 1;
+   list-style-type: none;
+   padding: 0;
+   border-radius: 10px;
+   overflow: hidden;
+   max-height: 200px; /* 스크롤바가 나타날 최대 높이 */
+   overflow-y: auto; /* 세로 스크롤바 활성화 */
+}
+
+.cateselectbox-option.catehide{
+   display: none;
+}
+
+.cateoption-btn{
+   width: 100%;
+   padding: 10px;
+   border: none;
+   background-color: #fff;
+   cursor: pointer;
+   text-align: left;
+   font-family: IBM Plex Sans KR;
+}
+
+.cateoption-btn:hover{
+   background-color: #EDF2FD;
+   width: 780px;
+   border-radius: 10px;
+   margin-top: 5px;
+   margin-left: 5px;
+   font-weight: bold;
+   font-family: IBM Plex Sans KR;
+}
+
 /* 지원 알림 이메일 */
 #email {
    width: 380px;
@@ -520,14 +587,15 @@ input:disabled {
          <div class="center">
             <div class="d-inline-flex top">
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img alt="뒤로가기" class="backimg"
-                  src="../image_icon/chevron.png">&nbsp;&nbsp;&nbsp;&nbsp;
-               <h2 style="font-weight: bold;">채용 공고 등록</h2>
+                  src="../hire_img/chevron.png">&nbsp;&nbsp;&nbsp;&nbsp;
+               <h2 style="font-weight: bold; font-size: 30px;">채용 공고 등록</h2>
             </div>
             <div class="bottom">
                <!-- 컨텐츠 시작 -->
                <div class="content">
 
-
+               <input type="hidden" name="c_num" value="${c_num }" id="c_num">
+               <input type="hidden" name="ci_num" value="${ci_num }" id="ci_num">
                   <!-- 직무 -->
                   <div class="title_div">
                      <span class="title">직무</span> <span><i
@@ -781,7 +849,7 @@ input:disabled {
                         <span class="title">공고ㆍ서론</span>
                         <span><i class="bi bi-asterisk imstar"></i></span>
                         <br>
-                        <div><pre><textarea class="textarea" placeholder="텍스트만 입력 가능합니다.(홈페이지 url, 이모티콘, 이미지 등록불가)"></textarea></pre></div>
+                        <div><pre style="font-family: IBM Plex Sans KR; overflow-x: hidden; font-size: 12pt;"><textarea class="textarea" placeholder="텍스트만 입력 가능합니다.(홈페이지 url, 이모티콘, 이미지 등록불가)"></textarea></pre></div>
                      </div>
                      
                      <br><br>
@@ -790,7 +858,7 @@ input:disabled {
                         <span class="title">주요업무</span>
                         <span><i class="bi bi-asterisk imstar"></i></span>
                         <br>
-                        <div><pre><textarea class="textarea" placeholder="내용 작성"></textarea></pre></div>
+                        <div><pre style="font-family: IBM Plex Sans KR; overflow-x: hidden; font-size: 12pt;"><textarea class="textarea" placeholder="내용 작성"></textarea></pre></div>
                      </div>
                      
                      <br><br>
@@ -799,7 +867,7 @@ input:disabled {
                         <span class="title">자격요건</span>
                         <span><i class="bi bi-asterisk imstar"></i></span>
                         <br>
-                        <div><pre><textarea class="textarea" placeholder="주요업무 및 전형절차를 함께 작성해주세요."></textarea></pre></div>
+                        <div><pre style="font-family: IBM Plex Sans KR; overflow-x: hidden; font-size: 12pt;"><textarea class="textarea" placeholder="주요업무 및 전형절차를 함께 작성해주세요."></textarea></pre></div>
                      </div>
                      
                      <br><br>
@@ -807,7 +875,7 @@ input:disabled {
                      <div class="title_div">
                         <span class="title">우대 사항</span>
                         <br>
-                        <div><pre><textarea class="textarea" placeholder="내용 작성"></textarea></pre></div>
+                        <div><pre style="font-family: IBM Plex Sans KR; overflow-x: hidden; font-size: 12pt;"><textarea class="textarea" placeholder="내용 작성"></textarea></pre></div>
                      </div>
                      
                      <br><br>
@@ -816,7 +884,7 @@ input:disabled {
                         <span class="title">혜택 및 복지</span>
                         <span><i class="bi bi-asterisk imstar"></i></span>
                         <br>
-                        <div><pre><textarea class="textarea" placeholder="내용 작성"></textarea></pre></div>
+                        <div><pre style="font-family: IBM Plex Sans KR; overflow-x: hidden; font-size: 12pt;"><textarea class="textarea" placeholder="내용 작성"></textarea></pre></div>
                      </div>
                      
                      <br><br>
@@ -890,7 +958,49 @@ input:disabled {
                      원
                   </span> <br>
                   <br>
-                  <br>
+                  
+                  <!-- 카테고리 선택 -->
+                  <div class="title_div">
+                     <span class="title">카테고리 선택</span>
+                  </div>
+                  <p class="info">
+                        현재 기업에서 시행중인 복지를 등록해주세요. (다중 선택 가능)<br>
+                  </p>
+                  <div class="title_div">
+                        <section class="cateselect-wrapper" data-role="cateselectbox">
+                        <section class="cateselectbox">
+                           <button type="button" class="catetoggle-btn">
+                              <span>카테고리</span> <i class="bi bi-caret-down-fill"
+                                 style="color: gray;"></i>
+                           </button>
+                           <ul class="cateselectbox-option catehide">
+                              <li><button type="button" class="cateoption-btn">4.5일제</button></li>
+                              <li><button type="button" class="cateoption-btn">재택근무</button></li>
+                              <li><button type="button" class="cateoption-btn">유연근무제</button></li>
+                              <li><button type="button" class="cateoption-btn">시차출근제</button></li>
+                              <li><button type="button" class="cateoption-btn">인센티브</button></li>
+                              <li><button type="button" class="cateoption-btn">코드리뷰</button></li>
+                              <li><button type="button" class="cateoption-btn">반바지/슬리퍼 OK</button></li>
+                              <li><button type="button" class="cateoption-btn">자유복장</button></li>
+                              <li><button type="button" class="cateoption-btn">맛있는간식냠냠</button></li>
+                              <li><button type="button" class="cateoption-btn">맥북으로개발</button></li>
+                              <li><button type="button" class="cateoption-btn">닉네임사용</button></li>
+                              <li><button type="button" class="cateoption-btn">수평적조직</button></li>
+                              <li><button type="button" class="cateoption-btn">반려동물</button></li>
+                              <li><button type="button" class="cateoption-btn">누적투자금100억이상</button></li>
+                              <li><button type="button" class="cateoption-btn">스톡옵션제공</button></li>
+                              <li><button type="button" class="cateoption-btn">도서구입비지원</button></li>
+                              <li><button type="button" class="cateoption-btn">택시비지원</button></li>
+                              <li><button type="button" class="cateoption-btn">병역특례</button></li>
+                              <li><button type="button" class="cateoption-btn">전공우대</button></li>
+                           </ul>
+                        </section>
+                     </section>
+                        <div id="selected-cate" style="font-size: 10pt; margin-top: 10px;"></div>
+                     </div>
+                  <br><br>
+                  
+                  
                   <!-- 지원 알림 이메일 -->
                   <div class="title_div">
                      <span class="title">지원 알림 이메일</span>
@@ -926,125 +1036,102 @@ input:disabled {
             </div>
          </div>
       </div>
-      <br><br><br>
+   <br><br>
+      <%-- <jsp:include page="footer.jsp"></jsp:include> --%>
    </div>
-   <script type="text/javascript">
-      /* 직무 select1 */
-      document.addEventListener('DOMContentLoaded', function() {
-         const toggleBtn = document.querySelector('.toggle-btn');
-         const selectBox = document.querySelector('.selectbox-option');
-         const options = document.querySelectorAll('.option-btn');
-         const toggleText = document.querySelector('.toggle-btn span');
+<script type="text/javascript">
+   //alert($("#c_num").val()+","+$("#ci_num").val());
+  
+$(document).ready(function() {
+   // 직무 select1
+   const toggleBtn1 = $('.toggle-btn');
+   const selectBox1 = $('.selectbox-option');
+   const options1 = $('.option-btn');
+   const toggleText1 = $('.toggle-btn span');
 
-         toggleBtn.addEventListener('click', function() {
-            selectBox.classList.toggle('hide');
-         });
+   toggleBtn1.click(function() {
+      selectBox1.toggleClass('hide');
+   });
 
-         options.forEach(function(option) {
-            option.addEventListener('click', function() {
-               toggleText.textContent = this.textContent;
-               toggleText.classList.add('selected');
-               selectBox.classList.add('hide');
-            });
-         });
+   options1.click(function() {
+      toggleText1.text($(this).text());
+      toggleText1.addClass('selected');
+      selectBox1.addClass('hide');
+   });
 
-         document.addEventListener('click', function(event) {
-            if (!selectBox.parentElement.contains(event.target)) {
-               selectBox.classList.add('hide');
-            }
-         });
-      });
-      
-      /* 직무 select2 */
-      document.addEventListener('DOMContentLoaded', function() {
-         const toggleBtn = document.querySelector('.toggle-btn2');
-         const selectBox = document.querySelector('.selectbox-option2');
-         const options = document.querySelectorAll('.option-btn2');
-         const toggleText = document.querySelector('.toggle-btn2 span');
+   $(document).click(function(event) {
+      if (!selectBox1.parent().is(event.target) && !selectBox1.parent().has(event.target).length) {
+         selectBox1.addClass('hide');
+      }
+   });
 
-         toggleBtn.addEventListener('click', function() {
-            selectBox.classList.toggle('hide2');
-         });
+   // 직무 select2
+   const toggleBtn2 = $('.toggle-btn2');
+   const selectBox2 = $('.selectbox-option2');
+   const options2 = $('.option-btn2');
+   const toggleText2 = $('.toggle-btn2 span');
 
-         options.forEach(function(option) {
-            option.addEventListener('click', function() {
-               toggleText.textContent = this.textContent;
-               toggleText.classList.add('selected');
-               selectBox.classList.add('hide2');
-            });
-         });
+   toggleBtn2.click(function() {
+      selectBox2.toggleClass('hide2');
+   });
 
-         document.addEventListener('click', function(event) {
-            if (!selectBox.parentElement.contains(event.target)) {
-               selectBox.classList.add('hide2');
-            }
-         });
-      });
-      
-      /* 직무 select3 */
-      document.addEventListener('DOMContentLoaded', function() {
-         const toggleBtn = document.querySelector('.toggle-btn3');
-         const selectBox = document.querySelector('.selectbox-option3');
-         const options = document.querySelectorAll('.option-btn3');
-         const toggleText = document.querySelector('.toggle-btn3 span');
+   options2.click(function() {
+      toggleText2.text($(this).text());
+      toggleText2.addClass('selected');
+      selectBox2.addClass('hide2');
+   });
 
-         toggleBtn.addEventListener('click', function() {
-            selectBox.classList.toggle('hide3');
-         });
+   $(document).click(function(event) {
+      if (!selectBox2.parent().is(event.target) && !selectBox2.parent().has(event.target).length) {
+         selectBox2.addClass('hide2');
+      }
+   });
 
-         options.forEach(function(option) {
-            option.addEventListener('click', function() {
-               toggleText.textContent = this.textContent;
-               toggleText.classList.add('selected');
-               selectBox.classList.add('hide3');
-            });
-         });
+   // 직무 select3
+   const toggleBtn3 = $('.toggle-btn3');
+   const selectBox3 = $('.selectbox-option3');
+   const options3 = $('.option-btn3');
+   const toggleText3 = $('.toggle-btn3 span');
 
-         document.addEventListener('click', function(event) {
-            if (!selectBox.parentElement.contains(event.target)) {
-               selectBox.classList.add('hide3');
-            }
-         });
-      });
+   toggleBtn3.click(function() {
+      selectBox3.toggleClass('hide3');
+   });
 
-      /* 근무지 api띄우고 #address1에 값 설정 */
-      document
-            .querySelector('.location')
-            .addEventListener(
-                  'click',
-                  function() {
-                     // 주소 검색 레이어와 오버레이 표시
-                     document.getElementById('postcode-overlay').style.display = 'block';
-                     document.getElementById('postcode-layer').style.display = 'block';
+   options3.click(function() {
+      toggleText3.text($(this).text());
+      toggleText3.addClass('selected');
+      selectBox3.addClass('hide3');
+   });
 
-                     new daum.Postcode(
-                           {
-                              oncomplete : function(data) {
-                                 // 주소 선택 시 입력 필드에 값 설정
-                                 document.getElementById('address1').value = data.address;
+   $(document).click(function(event) {
+      if (!selectBox3.parent().is(event.target) && !selectBox3.parent().has(event.target).length) {
+         selectBox3.addClass('hide3');
+      }
+   });
 
-                                 // 주소 검색 레이어와 오버레이 숨기기
-                                 document
-                                       .getElementById('postcode-overlay').style.display = 'none';
-                                 document
-                                       .getElementById('postcode-layer').style.display = 'none';
-                              },
-                              width : '100%',
-                              height : '100%'
-                           }).embed(document
-                           .getElementById('postcode-layer'));
-                  });
+   // 근무지 api띄우고 #address1에 값 설정
+   $('.location').click(function() {
+      $('#postcode-overlay').show();
+      $('#postcode-layer').show();
 
-      // 주소 검색 오버레이를 클릭하면 닫기
-      document
-            .getElementById('postcode-overlay')
-            .addEventListener(
-                  'click',
-                  function() {
-                     document.getElementById('postcode-overlay').style.display = 'none';
-                     document.getElementById('postcode-layer').style.display = 'none';
-                  });
-   </script>
+      new daum.Postcode({
+         oncomplete: function(data) {
+            $('#address1').val(data.address);
+            $('#postcode-overlay').hide();
+            $('#postcode-layer').hide();
+         },
+         width: '100%',
+         height: '100%'
+      }).embed($('#postcode-layer').get(0));
+   });
+
+   // 주소 검색 오버레이를 클릭하면 닫기
+   $('#postcode-overlay').click(function() {
+      $('#postcode-overlay').hide();
+      $('#postcode-layer').hide();
+   });
+});
+ </script>
 
    <!-- 경력 select -->
 <script type="text/javascript">
@@ -1120,73 +1207,167 @@ input:disabled {
 
 <!-- 기술 스택 . 툴 -->
 <script type="text/javascript">
-
 /* 기술 스택 . 툴 select */
-document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.querySelector('.techtoggle-btn');
-    const selectBox = document.querySelector('.techselectbox-option');
-    const options = document.querySelectorAll('.techoption-btn');
-    const toggleText = document.querySelector('.techtoggle-btn span');
-
-    toggleBtn.addEventListener('click', function() {
-       selectBox.classList.toggle('techhide');
-    });
-
-    options.forEach(function(option) {
-       option.addEventListener('click', function() {
-          toggleText.textContent = this.textContent;
-          toggleText.classList.add('selected');
-          selectBox.classList.add('techhide');
-       });
-    });
-
-    document.addEventListener('click', function(event) {
-       if (!selectBox.parentElement.contains(event.target)) {
-          selectBox.classList.add('techhide');
-       }
-    });
- });
-
-/* 공고 직무 표시하기 */
-document.addEventListener('DOMContentLoaded', function() {
-    const selectOptions = document.querySelectorAll('.techoption-btn');
-    const selectedJobsContainer = document.getElementById('selected-tech');
+$(document).ready(function() {
     
-    selectOptions.forEach(function(option) {
-        option.addEventListener('click', function() {
-            const jobText = this.textContent;
-            addSelectedJob(jobText);
-        });
+    const toggleBtnTech = $('.techtoggle-btn');
+    const selectBoxTech = $('.techselectbox-option');
+    const optionsTech = $('.techoption-btn');
+    const toggleTextTech = $('.techtoggle-btn span');
+
+    toggleBtnTech.click(function() {
+        selectBoxTech.toggleClass('techhide');
     });
 
-    function addSelectedJob(jobText) {
-        const jobElement = document.createElement('div');
-        jobElement.className = 'selected-tech';
-        jobElement.style.display = 'inline-block';
-        jobElement.style.marginRight = '10px';
-        jobElement.style.marginBottom = '5px';
-        jobElement.style.border = '1px solid #ccc';
-        jobElement.style.padding = '6px';
-        jobElement.style.borderRadius = '10px';
-        
-        const jobTextElement = document.createElement('span');
-        jobTextElement.textContent = jobText;
+    $(document).click(function(event) {
+        if (!selectBoxTech.parent().is(event.target) && !selectBoxTech.parent().has(event.target).length) {
+            selectBoxTech.addClass('techhide');
+        }
+    });
 
-        const removeButton = document.createElement('button');
-        removeButton.textContent = 'X';
-        removeButton.style.marginLeft = '10px';
-        removeButton.style.border = 'none';
-        removeButton.style.background = 'none';
-        removeButton.style.color = 'red';
-        removeButton.style.cursor = 'pointer';
+    $('.techoption-btn').click(function() {
+        const techText = $(this).text();
+        addSelectedTech(techText);
+        toggleTextTech.text(techText).css({color: "black"});
+        selectBoxTech.addClass('techhide');
+        $(this).prop('disabled', true);
+    });
 
-        removeButton.addEventListener('click', function() {
-            selectedJobsContainer.removeChild(jobElement);
+    $('.resettech').click(function() {
+        resetSelectedTechs();
+    });
+
+    function addSelectedTech(techText) {
+        const techElement = $('<div>').addClass('selected-tech').css({
+            display: 'inline-block',
+            marginLeft: '6px',
+            marginRight: '10px',
+            marginBottom: '5px',
+            border: '1px solid #ccc',
+            backgroundColor: '#fafafa',
+            padding: '6px',
+            borderRadius: '15px',
+            fontWeight: 'bold',
+            paddingLeft: '8px'
         });
 
-        jobElement.appendChild(jobTextElement);
-        jobElement.appendChild(removeButton);
-        selectedJobsContainer.appendChild(jobElement);
+        const techTextElement = $('<span>').text(techText);
+        const removeButton = $('<button>').html('<i class="bi bi-x-lg"></i>').css({
+            marginLeft: '10px',
+            border: 'none',
+            background: 'none',
+            color: 'blue',
+            cursor: 'pointer'
+        });
+
+        removeButton.on('click', function() {
+            techElement.remove();
+            $('.techoption-btn').each(function() {
+                if ($(this).text() === techText) {
+                    $(this).prop('disabled', false);
+                }
+            });
+            updateToggleText(); // 여기에 추가
+        });
+
+        techElement.append(techTextElement).append(removeButton);
+        $('#selected-tech').append(techElement);
+    }
+
+    function updateToggleText() {
+        const selectedTechs = $('#selected-tech .selected-tech');
+        const toggleText = $('.techtoggle-btn span');
+        if (selectedTechs.length === 0) {
+            toggleText.text("기술 스택ㆍ툴").css({color: "gray"});
+        }
+    }
+
+    function resetSelectedTechs() {
+        $('#selected-tech').empty();
+        $('.techoption-btn').prop('disabled', false);
+        updateToggleText(); // 여기에 추가
+    }
+});
+</script>
+
+<!-- 카테고리 -->
+<script type="text/javascript">
+
+/* 카테고리 select */
+$(document).ready(function() {
+    const toggleBtnCate = $('.catetoggle-btn');
+    const selectBoxCate = $('.cateselectbox-option');
+    const optionsCate = $('.cateoption-btn');
+    const toggleTextCate = $('.catetoggle-btn span');
+    const selectedJobsContainerCate = $('#selected-cate');
+
+    toggleBtnCate.click(function() {
+        selectBoxCate.toggleClass('catehide');
+    });
+
+    optionsCate.click(function() {
+        const jobText = $(this).text();
+        if (!isJobAlreadySelected(jobText)) {
+            addSelectedJobCate(jobText);
+            toggleTextCate.text(jobText);
+        }
+        selectBoxCate.addClass('catehide');
+    });
+
+    $(document).click(function(event) {
+        if (!selectBoxCate.parent().is(event.target) && !selectBoxCate.parent().has(event.target).length) {
+            selectBoxCate.addClass('catehide');
+        }
+    });
+
+    function addSelectedJobCate(jobText) {
+        const jobElement = $('<div>', {
+            class: 'selected-cate',
+            css: {
+                display: 'inline-block',
+                marginRight: '10px',
+                marginBottom: '5px',
+                border: '1px solid #ccc',
+                padding: '8px',
+                borderRadius: '15px'
+            }
+        });
+
+        const jobTextElement = $('<span>').text(jobText);
+
+        const removeButton = $('<button>', {
+            text: 'X',
+            css: {
+                marginLeft: '10px',
+                border: 'none',
+                background: 'none',
+                color: 'blue',
+                cursor: 'pointer'
+            }
+        });
+
+        removeButton.click(function() {
+            jobElement.remove();
+            // Reset toggleTextCate to default text when all options are removed
+            if (selectedJobsContainerCate.find('.selected-cate').length === 0) {
+                toggleTextCate.text('카테고리');
+            }
+        });
+
+        jobElement.append(jobTextElement).append(removeButton);
+        selectedJobsContainerCate.append(jobElement);
+    }
+
+    function isJobAlreadySelected(jobText) {
+        let alreadySelected = false;
+        selectedJobsContainerCate.find('.selected-cate').each(function() {
+            const text = $(this).find('span').text();
+            if (text === jobText) {
+                alreadySelected = true;
+                return false; // Exit the loop early
+            }
+        });
+        return alreadySelected;
     }
 });
 </script>
